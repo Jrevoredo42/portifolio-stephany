@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-brown: #463f1a;
+  --color-ink: #040205;
+  --color-gold: #d87727;
+  --color-terracota: #d87727;
+  --color-purple: #4e4a6b;
+  --color-wine: #8a0134;
+  --color-crimson: #981b18;
+  --color-azure: #028090;
+  --color-yellow: #fde74c;
+  --color-gray: #9d948a;
+  --color-green: #8CD867;
+  /** --color-really-gold: #eda20f; */
+  --font-display: "Caesar Dressing", system-ui;
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'Poppins', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #040205;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #040205;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #eda20f40;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #eda20f80;
+}
+
+::selection {
+  background: #eda20f30;
+  color: #eda20f;
+}
+
+.hero-mask {
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+@media (min-width: 768px) {
+  .hero-mask {
+    mask-image: linear-gradient(to right, transparent 0%, black 18%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%);
+  }
+}
