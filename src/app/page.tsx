@@ -52,10 +52,10 @@ const destaques = [
 ]
 
 const tipoCor: Record<string, string> = {
-  'Espetáculo': 'text-yellow font-bold border-yellow/40',
-  'Festival': 'text-crimson font-bold border-crimson/40',
-  'Formação': 'text-[#463f1a] font-bold border-[#463f1a]/40',
-  'Evento': 'text-azure font-bold border-azure/40',
+  'Espetáculo': 'bg-yellow font-bold text-brown border-yellow/40',
+  'Festival': 'text-amber-100 bg-crimson font-bold border-crimson/40',
+  'Formação': 'bg-brown text-amber-100 font-bold border-[#463f1a]/40',
+  'Evento': 'bg-azure text-amber-100 font-bold border-azure/40',
 }
 
 export default function HomePage() {

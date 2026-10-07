@@ -56,6 +56,28 @@ body {
   background: #eda20f80;
 }
 
+.scrollbar-yellow {
+  scrollbar-color: #fde74c #040205;
+  scrollbar-width: thin;
+}
+
+.scrollbar-yellow::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-yellow::-webkit-scrollbar-track {
+  background: #040205;
+}
+
+.scrollbar-yellow::-webkit-scrollbar-thumb {
+  background: #fde74c;
+  border-radius: 3px;
+}
+
+.scrollbar-yellow::-webkit-scrollbar-thumb:hover {
+  background: #fde74c;
+}
+
 ::selection {
   background: #eda20f30;
   color: #eda20f;

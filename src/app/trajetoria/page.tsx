@@ -8,6 +8,8 @@ const reveal = {
   show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: 'easeOut' as const } },
 }
 
+import sterSaudandoNobg from '@/assets/sterSaudando-nobg.png'
+
 type TipoEvento = 'espetaculo' | 'premio' | 'formacao' | 'institucional' | 'internacional'
 
 type Evento = {
@@ -16,10 +18,10 @@ type Evento = {
   desc: string
   tipo: TipoEvento
 }
-
+{/*
 const eventos: Evento[] = [
-  { ano: '2005', titulo: 'Início da Trajetória', desc: 'Graduação em Artes Cênicas pela UFBA. Primeiros passos em teatro e contação de histórias em Salvador.', tipo: 'formacao' },
-  { ano: '2007', titulo: 'Primeiro Espetáculo', desc: '"As Filhas da Noite" — primeiro espetáculo solo de contação, apresentado no Teatro SESI BA e em festivais regionais.', tipo: 'espetaculo' },
+  { ano: '2026', titulo: 'Turnê Luanda Ruanda Sesc Pulsar', desc: 'Luanda Ruanda - Histórias Africanas desembarca no Rio de Janeiro para uma circulação muito especial foram 10 apresentações, em 10 unidades do Sesc RJ, através do Edital Sesc RJ Pulsar 2026.', tipo: 'espetaculo' },
+  { ano: '2026', titulo: 'Primeiro Espetáculo', desc: '"As Filhas da Noite" — primeiro espetáculo solo de contação, apresentado no Teatro SESI BA e em festivais regionais.', tipo: 'espetaculo' },
   { ano: '2010', titulo: 'Chegada a São Paulo', desc: 'Mudança para SP. Formação em pedagogia do teatro na ECA/USP e integração à cena alternativa paulistana.', tipo: 'formacao' },
   { ano: '2012', titulo: 'Coletivo Tear', desc: 'Fundação do Coletivo Tear, grupo de criação e produção artística voltado para arte periférica e contação de histórias.', tipo: 'institucional' },
   { ano: '2014', titulo: 'Primeira Circulação Internacional', desc: 'Festival Internacional de Contação de Histórias em Lisboa, Portugal. Apresentação de "As Filhas da Noite" em 3 cidades.', tipo: 'internacional' },
@@ -34,9 +36,9 @@ const eventos: Evento[] = [
   { ano: '2024', titulo: 'Expansão em Arte-Educação', desc: 'Parceria com SESC SP para programa anual de formação de educadores. Mais de 200 professores formados ao longo do ano.', tipo: 'formacao' },
   { ano: '2025', titulo: 'Novos Horizontes', desc: 'Desenvolvimento de novo espetáculo, manutenção da agenda de formações e planejamento de circulação europeia de "Luanda Ruanda".', tipo: 'espetaculo' },
 ]
-
+ 
 const tipoCor: Record<TipoEvento, { dot: string; label: string; tag: string }> = {
-  espetaculo: { dot: 'bg-gold', label: 'Espetáculo', tag: 'text-gold border-gold/30' },
+  espetaculo: { dot: 'bg-gold', label: 'Espetáculo', tag: 'text-white bg-gold border-gold/30' },
   premio: { dot: 'bg-azure', label: 'Prêmio / Destaque', tag: 'text-azure border-azure/30' },
   formacao: { dot: 'bg-crimson', label: 'Formação', tag: 'text-crimson border-crimson/30' },
   institucional: { dot: 'bg-purple', label: 'Institucional', tag: 'text-purple border-purple/30' },
@@ -57,7 +59,7 @@ function TimelineItem({ evento, index }: { evento: Evento; index: number }) {
       style={{ opacity, x }}
       className="grid grid-cols-[1fr_auto_1fr] gap-0 items-start bg-crimson"
     >
-      {/* Lado esquerdo */}
+     
       <div className={`pb-12 pr-10 ${esquerda ? 'text-right' : ''}`}>
         {esquerda ? (
           <div className="space-y-2">
@@ -72,13 +74,12 @@ function TimelineItem({ evento, index }: { evento: Evento; index: number }) {
         )}
       </div>
 
-      {/* Linha central */}
+
       <div className="flex flex-col items-center">
         <div className={`w-3 h-3 rounded-full ${cor.dot} shrink-0 mt-1.5 z-10`} />
         <div className="w-px flex-1 bg-gold/15 min-h-15" />
       </div>
 
-      {/* Lado direito */}
       <div className="pb-12 pl-10">
         {!esquerda ? (
           <div className="space-y-2">
@@ -119,31 +120,50 @@ function TimelineItemMobile({ evento }: { evento: Evento }) {
     </motion.div>
   )
 }
-
+*/}
 export default function TrajetoriaPage() {
   return (
     <div className="bg-crimson min-h-screen">
       {/* ── CABEÇALHO ────────────────────────────────────── */}
       <section className="pt-40 pb-16 max-w-7xl mx-auto px-8">
-        <motion.p variants={reveal} initial="hidden" animate="show" className="font-sans text-[10px] uppercase tracking-[0.35em] text-yellow mb-4">
-          Trajetória
-        </motion.p>
-        <motion.h1
-          custom={1} variants={reveal} initial="hidden" animate="show"
-          className="font-display text-[clamp(2.5rem,7vw,6rem)] text-white leading-none mb-8"
-        >
-          Uma vida<br /><span className="text-gold">em cena</span>
-        </motion.h1>
-        <motion.div custom={2} variants={reveal} initial="hidden" animate="show" className="w-16 h-px bg-yellow mb-8" />
-        <motion.p
-          custom={3} variants={reveal} initial="hidden" animate="show"
-          className="font-serif italic text-amber-100 text-xl max-w-xl leading-relaxed"
-        >
-          Mais de 15 anos de criação, circulação e transformação através das artes cênicas.
-        </motion.p>
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div>
+            <motion.p variants={reveal} initial="hidden" animate="show" className="font-sans text-[10px] uppercase tracking-[0.35em] text-yellow mb-4">
+              Trajetória
+            </motion.p>
+            <motion.h1
+              custom={1} variants={reveal} initial="hidden" animate="show"
+              className="font-display text-[clamp(2.5rem,7vw,6rem)] text-white leading-none mb-8"
+            >
+              Uma vida<br /><span className="text-gold">em cena</span>
+            </motion.h1>
+            <motion.div custom={2} variants={reveal} initial="hidden" animate="show" className="w-16 h-px bg-yellow mb-8" />
+            <motion.p
+              custom={3} variants={reveal} initial="hidden" animate="show"
+              className="font-serif italic text-amber-100 text-xl max-w-xl leading-relaxed"
+            >
+              Mais de 15 anos de criação, circulação e transformação através da arte e cultura.
+            </motion.p>
+          </div>
+
+          {/* ── Foto sem fundo ── */}
+          <motion.div
+            variants={reveal}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="shrink-0 flex items-end justify-center lg:self-stretch"
+          >
+            <img
+              src={sterSaudandoNobg.src}
+              alt="Stephany em pose de dança"
+              className="w-80 md:w-100 xl:w-132 object-contain drop-shadow-xl"
+            />
+          </motion.div>
+        </div>
       </section>
 
-      {/* ── LEGENDA ──────────────────────────────────────── */}
+      {/* ── LEGENDA ────────────────────────────────────────
       <section className="max-w-7xl mx-auto px-8 pb-12">
         <motion.div
           variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
@@ -158,19 +178,20 @@ export default function TrajetoriaPage() {
         </motion.div>
       </section>
 
-      {/* ── TIMELINE DESKTOP ─────────────────────────────── */}
+     
       <section className="max-w-5xl mx-auto px-8 pb-24 hidden lg:block">
         {eventos.map((evento, i) => (
           <TimelineItem key={evento.ano + evento.titulo} evento={evento} index={i} />
         ))}
       </section>
 
-      {/* ── TIMELINE MOBILE ──────────────────────────────── */}
+   
       <section className="max-w-2xl mx-auto px-8 pb-24 lg:hidden">
         {eventos.map(evento => (
           <TimelineItemMobile key={evento.ano + evento.titulo} evento={evento} />
         ))}
       </section>
+      */}
 
       {/* ── RECONHECIMENTOS ──────────────────────────────── */}
       <section className="bg-purple py-20">
@@ -181,12 +202,12 @@ export default function TrajetoriaPage() {
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { premio: 'Melhor Espetáculo', festival: 'Festival Cena Aberta — 2016', obra: 'Luanda Ruanda' },
-              { premio: 'Indicação — Melhor Atriz', festival: 'Prêmio Shell de Teatro — 2017', obra: 'Teatro Infantil e Jovem' },
-              { premio: 'Seleção Oficial', festival: 'Festival Internacional de Lisboa — 2014, 2019', obra: 'Contação de Histórias' },
-              { premio: 'Destaque em Arte-Educação', festival: 'SESC SP — 2022, 2024', obra: 'Formação de educadores' },
-              { premio: 'Projeto Aprovado', festival: 'Lei Rouanet — 5 projetos aprovados', obra: '2016–2024' },
-              { premio: 'Curadoria Convidada', festival: 'FLIP 2023 e 2024', obra: 'Programação Infantil' },
+              { premio: 'Prêmio Colibri de Ouro', festival: 'Janela Cultural', obra: 'Produção Cultural e artística' },
+              { premio: 'Prêmio Mulheres Negras de Pernambuco', festival: 'Política Nacional Aldir Blanc do Estado de Pernambuco', obra: '2023' },
+              { premio: 'Mérito Cultural e artístico', festival: 'Câmara Municipal de Garanhuns', obra: 'Arte e Cultura' },
+              { premio: '5º e 6º Prêmio Pernalonga de Teatro', festival: 'Prêmio Cultura de Pernambuco', obra: 'Luanda Ruanda ' },
+              { premio: 'Integrante do conselho estadual de Cultura na comissão Música', festival: 'Conselho estadual de Política Cultural de Pernambuco', obra: '2021-2023' },
+              { premio: 'Parecerista da LPG', festival: 'Lei Paulo Gustavo - Arcoverde', },
             ].map((r) => (
               <motion.div
                 key={r.premio + r.festival}
@@ -197,9 +218,9 @@ export default function TrajetoriaPage() {
                 className="border border-terracota p-6 hover:border-gold/40 transition-colors"
               >
                 <div className="w-6 h-px bg-gold mb-4" />
-                <p className="font-sans text-gold text-xs font-semibold uppercase tracking-widest mb-1">{r.premio}</p>
-                <p className="font-serif text-white/70 text-sm leading-snug mb-2">{r.festival}</p>
-                <p className="font-sans text-white/35 text-xs">{r.obra}</p>
+                <p className="font-sans text-yellow text-xs font-semibold uppercase tracking-widest mb-1">{r.premio}</p>
+                <p className="font-serif text-amber-100 text-sm leading-snug mb-2">{r.festival}</p>
+                <p className="font-sans text-white/80 text-xs">{r.obra}</p>
               </motion.div>
             ))}
           </div>
@@ -209,22 +230,22 @@ export default function TrajetoriaPage() {
       {/* ── CIRCULAÇÕES ──────────────────────────────────── */}
       <section className="py-20 max-w-7xl mx-auto px-8">
         <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="mb-10">
-          <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-gold/70 mb-3">Circulação Nacional e Internacional</p>
+          <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-yellow mb-3">Circulação Nacional e Estadual</p>
           <h2 className="font-display text-4xl text-white">Onde já <span className="text-gold">esteve</span></h2>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-10">
           <motion.div custom={0} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-            <p className="font-sans text-[10px] uppercase tracking-widest text-white/30 mb-5">Brasil</p>
+            <p className="font-sans text-[10px] uppercase tracking-widest text-amber-100 mb-5">Brasil</p>
             <div className="flex flex-wrap gap-2">
-              {['São Paulo', 'Rio de Janeiro', 'Salvador', 'Recife', 'Fortaleza', 'Belo Horizonte', 'Brasília', 'Porto Alegre', 'Curitiba', 'Manaus', 'Belém', 'São Luís', 'Natal', 'João Pessoa', 'Aracaju', 'Paraty', 'Campinas', 'Santos'].map(c => (
-                <span key={c} className="font-sans text-white/50 text-xs border border-white/10 px-3 py-1.5 hover:border-gold/40 hover:text-gold transition-colors cursor-default">{c}</span>
+              {['São Paulo', 'Rio de Janeiro', 'Bahia', 'Ceará', 'Paraíba', 'Pernambuco', 'Alagoas', 'Porto Alegre', 'Curitiba', 'Manaus', 'Belém', 'São Luís', 'Natal', 'João Pessoa', 'Aracaju', 'Paraty', 'Campinas', 'Santos'].map(c => (
+                <span key={c} className="font-sans text-amber-100 text-xs border border-white/10 px-3 py-1.5 hover:border-gold/40 hover:text-gold transition-colors cursor-default">{c}</span>
               ))}
             </div>
           </motion.div>
 
           <motion.div custom={1} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-            <p className="font-sans text-[10px] uppercase tracking-widest text-white/30 mb-5">Internacional</p>
+            <p className="font-sans text-[10px] uppercase tracking-widest text-amber-100 mb-5">Internacional</p>
             <div className="space-y-3">
               {[
                 { pais: 'Portugal', cidades: 'Lisboa, Porto, Coimbra — 2014, 2019' },
@@ -234,8 +255,8 @@ export default function TrajetoriaPage() {
                 { pais: 'Senegal', cidades: 'Dakar — Festival Mundial das Artes Negras — 2023' },
               ].map(p => (
                 <div key={p.pais} className="flex gap-4 items-baseline border-b border-white/8 pb-3">
-                  <span className="font-display text-gold text-lg w-24 shrink-0">{p.pais}</span>
-                  <span className="font-sans text-white/50 text-xs">{p.cidades}</span>
+                  <span className="font-display text-yellow text-lg w-24 shrink-0">{p.pais}</span>
+                  <span className="font-sans text-amber-100 text-xs">{p.cidades}</span>
                 </div>
               ))}
             </div>
