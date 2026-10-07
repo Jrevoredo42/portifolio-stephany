@@ -48,6 +48,20 @@ import amostraMundauFoto3 from '@/assets/amostra-mundau/amostra-mundau3.png'
 import amostraMundauFoto4 from '@/assets/amostra-mundau/amostra-mundau4.png'
 import amostraMundauFoto5 from '@/assets/amostra-mundau/amostra-mundau5.png'
 
+import studioTearCapa from '@/assets/studio-tear/studio-tear2.png'
+import studioTearFoto1 from '@/assets/studio-tear/studio-tear1.png'
+import studioTearFoto2 from '@/assets/studio-tear/studio-tear-formativo1.png'
+import studioTearFoto3 from '@/assets/studio-tear/studio-tear3.png'
+import studioTearFoto4 from '@/assets/studio-tear/studio-tear4.png'
+import studioTearFoto5 from '@/assets/studio-tear/studio-tear5.png'
+import studioTearFoto6 from '@/assets/studio-tear/studio-tear-formativo.png'
+
+import tearNaAreaCapa from '@/assets/tear-na-area/tear-na-area-capa.jpeg'
+import tearNaAreaFoto1 from '@/assets/tear-na-area/tear-na-area1.jpeg'
+import tearNaAreaFoto2 from '@/assets/tear-na-area/tear-na-area2.jpeg'
+import tearNaAreaFoto3 from '@/assets/tear-na-area/tear-na-area3.png'
+import tearNaAreaFoto4 from '@/assets/tear-na-area/tear-na-area4.png'
+
 
 import sterComLivro from '@/assets/ster/sterComLivro.jpeg'
 import sterStudioTear from '@/assets/ster/sterStudioTear.jpeg'
@@ -248,8 +262,8 @@ const projetos: Projeto[] = [
     fotos: [cineclubinhoMalunguinhoFoto1.src, cineclubinhoMalunguinhoFoto2.src, cineclubinhoMalunguinhoFoto3.src],
   },
   {
-    id: 'amostra-mundau',
-    titulo: 'Amostra Mundaú de Canções',
+    id: 'mostra-mundau',
+    titulo: 'Mostra Mundaú de Canções',
     subtitulo: 'Festival cultural de canções autorais',
     categoria: 'Eventos',
     ano: '2022',
@@ -279,12 +293,11 @@ const projetos: Projeto[] = [
   {
     id: 'studio-tear',
     titulo: 'Studio Tear',
-    subtitulo: 'Projeto de animação literária e mediação de leitura',
+    subtitulo: 'Evento multicultural',
     categoria: 'Eventos',
     ano: '2021 — em andamento',
     descricao: [
-      'Literatura e teatro se encontram neste projeto de mediação cultural que transforma obras da literatura afro-brasileira em experiências cênicas.',
-      'Realizado em escolas, bibliotecas e espaços culturais.',
+      'É um evento cultural focado na produção, circulação e formação de artistas independentes do Agreste pernambucano. Realiza shows, eventos culturais, além de ciclos formativos e oficinas sobre gestão de carreira e mercado musical',
     ],
     detalhes: [
       'Formato: palestra-performance',
@@ -297,10 +310,10 @@ const projetos: Projeto[] = [
       'Projeto Escola de Tempo Integral SP',
       'FLIP 2023 e 2024',
     ],
-    img: livroEmCena.src,
-    imgFull: luandaRuanda.src,
+    img: studioTearCapa.src,
+    imgFull: studioTearCapa.src,
     cor: 'text-gold',
-    fotos: [sterComLivro.src],
+    fotos: [studioTearFoto1.src, studioTearFoto2.src, studioTearFoto3.src, studioTearFoto4.src, studioTearFoto5.src, studioTearFoto6.src],
   },
   {
     id: 'tear-na-area',
@@ -309,8 +322,8 @@ const projetos: Projeto[] = [
     categoria: 'Eventos',
     ano: '2021 — em andamento',
     descricao: [
-      'Literatura e teatro se encontram neste projeto de mediação cultural que transforma obras da literatura afro-brasileira em experiências cênicas.',
-      'Realizado em escolas, bibliotecas e espaços culturais.',
+      'O TEAR NA ÁREA é um evento cultural e artístico realizado em Garanhuns que reúne música, gastronomia autoral, drinks e encontros. Uma experiência que resgata o conceito do antigo Studio Tear, transformando um espaço acolhedor em um ponto de troca cultural e afetiva.',
+      'Música ao vivo, aromas, comidinhas e drinks criados especialmente para cada edição.',
     ],
     detalhes: [
       'Formato: palestra-performance',
@@ -323,36 +336,10 @@ const projetos: Projeto[] = [
       'Projeto Escola de Tempo Integral SP',
       'FLIP 2023 e 2024',
     ],
-    img: livroEmCena.src,
-    imgFull: luandaRuanda.src,
+    img: tearNaAreaCapa.src,
+    imgFull: tearNaAreaCapa.src,
     cor: 'text-gold',
-    fotos: [sterComLivro.src],
-  },
-  {
-    id: 'femuag',
-    titulo: 'Festival de música de Garanhuns - FEMUAG',
-    subtitulo: 'Projeto de animação literária e mediação de leitura',
-    categoria: 'Eventos',
-    ano: '2021 — em andamento',
-    descricao: [
-      'Literatura e teatro se encontram neste projeto de mediação cultural que transforma obras da literatura afro-brasileira em experiências cênicas.',
-      'Realizado em escolas, bibliotecas e espaços culturais.',
-    ],
-    detalhes: [
-      'Formato: palestra-performance',
-      'Duração: 60 a 90 minutos',
-      'Para estudantes de 8 a 17 anos',
-      'Adaptável ao espaço',
-    ],
-    circulacao: [
-      'Parceria com MEC',
-      'Projeto Escola de Tempo Integral SP',
-      'FLIP 2023 e 2024',
-    ],
-    img: livroEmCena.src,
-    imgFull: luandaRuanda.src,
-    cor: 'text-gold',
-    fotos: [sterComLivro.src],
+    fotos: [tearNaAreaFoto1.src, tearNaAreaFoto2.src, tearNaAreaFoto3.src, tearNaAreaFoto4.src],
   },
 ]
 
