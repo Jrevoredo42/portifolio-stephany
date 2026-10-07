@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from 'framer-motion'
-import stephanyNarrando from '@/assets/stephany-narrando.png'
+import stephanyApresentando from '@/assets/ster/sterApresentando3.jpeg'
+import sterArteEducacao from '@/assets/ster/sterArteEducacao.jpeg'
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -10,45 +11,39 @@ const reveal = {
 
 const oficinas = [
   {
-    titulo: 'A Arte de Contar Histórias',
-    carga: '20h',
-    publico: 'Educadores e artistas iniciantes',
-    desc: 'Fundamentos da contação de histórias: voz, corpo, olhar, silêncio e escolha narrativa. Metodologia baseada na oralidade e nas matrizes africanas.',
+    titulo: 'Studio Tear Formativo',
+    publico: 'Produtores culturais',
+    desc: 'Gestão de Carreira Independente - Trabalhando com Música no Interior',
     cor: 'border-gold text-gold',
   },
   {
-    titulo: 'Corpo que Conta — Teatro e Oralidade',
-    carga: '30h',
-    publico: 'Artistas em formação e educadores',
-    desc: 'Relação entre o corpo e a palavra falada. Exercícios de presença cênica, escuta, improviso e construção de personagens narradores.',
+    titulo: 'Studio Tear Formativo',
+    publico: 'Produtores culturais',
+    desc: 'A Música Além do Palco: Gestão Afetiva de Carreira Artística',
     cor: 'border-azure text-azure',
   },
   {
-    titulo: 'Matrizes Africanas na Escola',
-    carga: '16h',
-    publico: 'Professores da educação básica',
-    desc: 'Práticas pedagógicas que integram a cultura afro-brasileira no cotidiano escolar. Histórias, jogos, cantos e danças como ferramentas de ensino.',
+    titulo: 'Editais sem mistério',
+    publico: 'Professores culturais',
+    desc: 'Dicas práticas para transformar sua ideia em projeto cultural.',
     cor: 'border-crimson text-crimson',
   },
   {
-    titulo: 'Literatura e Palco — O Livro Vivo',
-    carga: '12h',
-    publico: 'Mediadores de leitura e bibliotecários',
-    desc: 'Como transformar obras literárias em experiências cênicas. Adaptação, dramatização e animação de textos da literatura afro-brasileira.',
+    titulo: 'Ciclo de Formação',
+    publico: 'Produtores Culturais',
+    desc: 'Gestão de Carreiras e projetos Culturais',
     cor: 'border-purple text-purple',
   },
   {
-    titulo: 'Formação em Mediação Cultural',
-    carga: '40h',
+    titulo: 'Tua voz vai se Pronunciar',
     publico: 'Gestores e produtores culturais',
-    desc: 'Ferramentas para mediação de projetos culturais em contextos vulneráveis. Gestão participativa, escuta ativa e cocriação comunitária.',
+    desc: 'Saberes e estratégias na construção de Carreiras Musicais',
     cor: 'border-gold text-gold',
   },
   {
-    titulo: 'Contação para Primeira Infância',
-    carga: '8h',
-    publico: 'Educadores de creches e pré-escolas',
-    desc: 'Narrativas para bebês e crianças de 0 a 6 anos. Uso do corpo, objetos, musicais e elementos sensoriais no trabalho com as primeiras infâncias.',
+    titulo: 'Webnario de Economia Criativa',
+    publico: 'Livre',
+    desc: 'Criação de portfólio por meio de uso de ferramentas de AI',
     cor: 'border-azure text-azure',
   },
 ]
@@ -73,15 +68,15 @@ const depoimentos = [
 
 export default function ArteEducacaoPage() {
   return (
-    <div className="bg-ink min-h-screen">
+    <div className="bg-purple min-h-screen">
       {/* ── CABEÇALHO ────────────────────────────────────── */}
       <section className="pt-40 pb-16 relative overflow-hidden">
         <div className="absolute right-0 top-0 bottom-0 w-1/3 lg:w-2/5 hidden lg:block">
-          <img src={stephanyNarrando.src} alt="" className="w-full h-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-linear-to-r from-ink to-transparent" />
+          <img src={stephanyApresentando.src} alt="" className="w-full h-full object-cover " />
+          <div className="absolute inset-0 bg-linear-to-r from-purple/10 to-transparent" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8">
-          <motion.p variants={reveal} initial="hidden" animate="show" className="font-sans text-[10px] uppercase tracking-[0.35em] text-gold/70 mb-4">
+          <motion.p variants={reveal} initial="hidden" animate="show" className="font-sans text-[10px] uppercase tracking-[0.35em] text-yellow mb-4">
             Arte-Educação & Formação
           </motion.p>
           <motion.h1
@@ -93,27 +88,50 @@ export default function ArteEducacaoPage() {
           <motion.div custom={2} variants={reveal} initial="hidden" animate="show" className="w-16 h-px bg-gold mb-8" />
           <motion.p
             custom={3} variants={reveal} initial="hidden" animate="show"
-            className="font-serif italic text-white/60 text-xl max-w-xl leading-relaxed"
+            className="font-serif italic text-yellow text-xl max-w-xl leading-relaxed"
           >
             A arte-educação como ferramenta de transformação social, afirmação identitária e desenvolvimento humano integral.
           </motion.p>
+          <motion.div
+            custom={4}
+            variants={reveal}
+            initial="hidden"
+            animate="show"
+            className="mt-8 lg:hidden rounded-2xl overflow-hidden shadow-xl aspect-4/3 max-w-md border border-gold/20"
+          >
+            <img
+              src={stephanyApresentando.src}
+              alt="Stephany Metódio apresentando"
+              className="w-full h-full object-cover object-top"
+            />
+          </motion.div>
         </div>
       </section>
 
       {/* ── METODOLOGIA ──────────────────────────────────── */}
-      <section className="bg-brown/50 py-20">
+      <section className="bg-gold py-20">
         <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-3 gap-10">
-          <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="lg:col-span-1">
-            <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-gold/70 mb-3">Metodologia</p>
-            <h2 className="font-display text-3xl text-white mb-4">Como trabalho</h2>
-            <div className="w-8 h-px bg-gold mb-6" />
+          <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="lg:col-span-1 flex flex-col justify-between">
+            <div>
+              <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-gold/70 mb-3">Metodologia</p>
+              <h2 className="font-display text-3xl text-white mb-4">Gestão, Formação e Ensino</h2>
+              <div className="w-8 h-px bg-gold mb-6" />
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-lg aspect-4/3 lg:aspect-4/3 mt-2 border border-purple/20">
+              <img
+                src={sterArteEducacao.src}
+                alt="Stephany em atividade de Arte-Educação e Formação"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent" />
+            </div>
           </motion.div>
           <motion.div custom={1} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="lg:col-span-2 space-y-5">
-            <p className="font-sans text-white/65 leading-loose">
-              Minhas práticas pedagógicas nascem da escuta — do grupo, do espaço, da história de cada participante. Não existe um roteiro fixo. Existe uma intenção: criar condições para que cada pessoa descubra que tem histórias a contar e um corpo que sabe narrá-las.
+            <p className="font-sans text-amber-100 leading-loose">
+              Atuei como Gerente de Cultura da Secult Garanhuns em <b>2021</b> e, de <b>2022</b> até o momento, atuo como professora de Produção Cultural e Economia Criativa no curso de EJA do Sesc/Senac Garanhuns. Também lecionei, nos cursos de Qualificação em Produção Cultural Executiva do Programa Minas, do Porto Digital, voltados para mulheres, mulheres trans e travestis em <b>2023</b> e <b>2024</b>.
             </p>
-            <p className="font-sans text-white/65 leading-loose">
-              A metodologia que desenvolvi ao longo dos anos integra as tradições orais africanas e afro-brasileiras com pedagogias contemporâneas da educação e do teatro. O resultado é um espaço de criação que respeita as múltiplas formas de inteligência e expressão.
+            <p className="font-sans text-amber-100 leading-loose">
+              Em <b>2023</b>, desenvolvi as diretrizes pedagógicas, ementa e módulos do curso de Profissionalização em Produção Cultural do Centro Cultural Sesc Garanhuns, consolidando minha atuação como formadora e gestora educacional. Atualmente, sigo como professora de Produção Cultural no Coletivo Tear, fortalecendo práticas culturais integradas à educação transformadora.
             </p>
             <div className="grid sm:grid-cols-3 gap-4 pt-4">
               {[
@@ -121,10 +139,10 @@ export default function ArteEducacaoPage() {
                 { icon: '◇', label: 'Corpo Presente', desc: 'O movimento como linguagem' },
                 { icon: '△', label: 'Ancestralidade', desc: 'Raízes africanas como fundamento' },
               ].map(m => (
-                <div key={m.label} className="border border-gold/20 p-5">
-                  <span className="text-gold text-2xl block mb-3">{m.icon}</span>
-                  <p className="font-sans text-white text-sm font-semibold mb-1">{m.label}</p>
-                  <p className="font-sans text-white/40 text-xs">{m.desc}</p>
+                <div key={m.label} className="border bg-purple rounded-2xl border-gold/20 p-5">
+                  <span className="text-yellow text-2xl block mb-3">{m.icon}</span>
+                  <p className="font-sans text-yellow text-sm font-semibold mb-1">{m.label}</p>
+                  <p className="font-sans text-amber-100 text-xs">{m.desc}</p>
                 </div>
               ))}
             </div>
@@ -151,19 +169,16 @@ export default function ArteEducacaoPage() {
               transition={{ duration: 0.3 }}
               className={`border-l-2 ${o.cor.split(' ')[0]} bg-brown/50 p-7 hover:bg-brown transition-colors duration-300`}
             >
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="font-serif text-white font-semibold text-lg leading-snug max-w-xs">{o.titulo}</h3>
-                <span className={`font-sans text-xs font-bold border px-2 py-0.5 shrink-0 ml-4 ${o.cor}`}>{o.carga}</span>
-              </div>
-              <p className="font-sans text-[10px] uppercase tracking-widest text-white/30 mb-3">{o.publico}</p>
-              <p className="font-sans text-white/60 text-sm leading-relaxed">{o.desc}</p>
+              <h3 className="font-serif text-white font-semibold text-lg leading-snug mb-4">{o.titulo}</h3>
+              <p className="font-sans text-[10px] uppercase tracking-widest text-yellow mb-3">{o.publico}</p>
+              <p className="font-sans text-amber-100 text-sm leading-relaxed">{o.desc}</p>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* ── DEPOIMENTOS ──────────────────────────────────── */}
-      <section className="bg-brown py-20">
+      <section className="bg-gold py-20">
         <div className="max-w-7xl mx-auto px-8">
           <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="mb-14">
             <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-gold/70 mb-3">Vozes</p>
@@ -191,21 +206,20 @@ export default function ArteEducacaoPage() {
           </div>
         </div>
       </section>
-
       {/* ── PARCEIROS ────────────────────────────────────── */}
-      <section className="py-16 max-w-7xl mx-auto px-8">
+      <section className="py-16 bg-gold max-w-full mx-auto px-8">
         <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center mb-10">
-          <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-gold/50">Instituições parceiras</p>
+          <p className="font-display text-3xl text-yellow">Instituições parceiras</p>
         </motion.div>
         <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
-          {['SESC SP', 'SESC RJ', 'Centro Cultural Banco do Brasil', 'Secretaria de Cultura — BA', 'Instituto Pensarte', 'FLIP', 'MEC — ProEI', 'Teatro Municipal SP'].map((p) => (
+          {['SESC', 'SEBRAE', 'Porto Digital', 'Secretaria de Cultura de Pernambuco', 'RIPA', 'UPE', 'FUNDARPE'].map((p) => (
             <motion.span
               key={p}
               variants={reveal}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="font-sans text-white/25 text-sm hover:text-gold/60 transition-colors cursor-default"
+              className="font-sans text-amber-100 text-sm hover:text-crimson transition-colors cursor-default"
             >
               {p}
             </motion.span>
@@ -214,13 +228,15 @@ export default function ArteEducacaoPage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="bg-gold py-16 text-center">
+      <section className="bg-purple py-16 text-center">
         <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-          <h3 className="font-display text-4xl text-brown mb-4">Leve uma formação para sua instituição</h3>
-          <p className="font-sans text-brown/70 text-sm mb-8">Workshops in-company, formações continuadas, palestras e residências artísticas</p>
+          <h3 className="font-display text-4xl text-gold mb-4">Leve uma formação para sua instituição</h3>
+          <p className="font-sans text-amber-100 text-sm mb-8">Formações continuadas, palestras e Podcastes Webnários</p>
           <a
-            href="mailto:stephany.metodio@email.com"
-            className="inline-block bg-brown text-gold font-sans font-semibold text-xs uppercase tracking-widest px-10 py-4 hover:bg-ink hover:text-gold transition-colors"
+            href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20proposta%20de%20form%C3%A7%C3%A3o"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-yellow text-crimson font-sans font-semibold text-xs uppercase tracking-widest px-10 py-4 hover:bg-ink hover:text-gold transition-colors"
           >
             Solicitar proposta →
           </a>

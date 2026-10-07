@@ -61,7 +61,7 @@ const projProduzidos = [
 
 export default function ProducaoPage() {
   return (
-    <div className="bg-ink min-h-screen">
+    <div className="bg-azure min-h-screen">
       {/* ── CABEÇALHO ────────────────────────────────────── */}
       <section className="pt-40 pb-16 max-w-7xl mx-auto px-8">
         <motion.p variants={reveal} initial="hidden" animate="show" className="font-sans text-[10px] uppercase tracking-[0.35em] text-gold/70 mb-4">
