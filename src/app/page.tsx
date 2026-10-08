@@ -93,7 +93,7 @@ export default function HomePage() {
               variants={reveal}
               initial="hidden"
               animate="show"
-              className="font-sans font-bold text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.22em] md:tracking-[0.35em] text-amber-100 mb-1 md:mb-6 max-w-[240px] md:max-w-none text-right md:text-left"
+              className="font-sans font-bold text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.22em] md:tracking-[0.35em] text-amber-100 mb-1 md:mb-6 max-w-60 md:max-w-none text-right md:text-left"
             >
               Atriz · Produtora Cultural · Contadora de Histórias · Arte-Educadora
             </motion.p>
@@ -402,7 +402,7 @@ export default function HomePage() {
           >
             {[
               { label: 'E-mail', value: 'stephany.metodio@email.com', href: 'mailto:stephany.metodio@email.com', icon: '✉' },
-              { label: 'WhatsApp', value: '+55 11 9 9999-9999', href: 'https://wa.me/5587981480808', icon: '◎' },
+              { label: 'WhatsApp', value: '+55 87 9 8148-0808', href: 'https://wa.me/5587981480808', icon: '◎' },
               { label: 'Instagram', value: '@stephanymetodio', href: 'https://instagram.com/stephanymetodio', icon: '◇' },
               { label: 'YouTube', value: 'Stephany Metódio', href: 'https://youtube.com/@stephanymetodio', icon: '▷' },
             ].map(item => (

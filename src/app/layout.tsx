@@ -8,7 +8,14 @@ export const metadata: Metadata = {
   title: 'Stephany Metódio',
   description: 'Portfólio artístico de Stephany Metódio: espetáculos, arte-educação, produção cultural, projetos e trajetória.',
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/assets/favicon_io/favicon.ico' },
+      { url: '/assets/favicon_io/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/assets/favicon_io/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/assets/favicon_io/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
 }
 
