@@ -233,7 +233,7 @@ export default function ArteEducacaoPage() {
           <h3 className="font-display text-4xl text-gold mb-4">Leve uma formação para sua instituição</h3>
           <p className="font-sans text-amber-100 text-sm mb-8">Formações continuadas, palestras e Podcastes Webnários</p>
           <a
-            href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20proposta%20de%20form%C3%A7%C3%A3o"
+            href="https://wa.me/5587981480808?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20proposta%20de%20form%C3%A7%C3%A3o"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-yellow text-crimson font-sans font-semibold text-xs uppercase tracking-widest px-10 py-4 hover:bg-ink hover:text-gold transition-colors"

@@ -5,7 +5,7 @@ import PortfolioButton from '@/components/PortfolioButton'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'Stephany Metódio — Atriz, Produtora, Contadora de Histórias & Arte-Educadora',
+  title: 'Stephany Metódio',
   description: 'Portfólio artístico de Stephany Metódio: espetáculos, arte-educação, produção cultural, projetos e trajetória.',
   icons: {
     icon: '/favicon.ico',

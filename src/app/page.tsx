@@ -85,80 +85,86 @@ export default function HomePage() {
 
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="relative z-10 h-full flex flex-col justify-center max-w-7xl mx-auto px-8 pt-20"
+          className="relative z-10 h-full flex flex-col justify-between md:justify-center max-w-7xl mx-auto px-6 md:px-8 pt-18 sm:pt-20 md:pt-20 pb-12 md:py-0"
         >
-          <motion.p
-            variants={reveal}
-            initial="hidden"
-            animate="show"
-            className="font-sans text-xs uppercase tracking-[0.35em] text-yellow mb-6"
-          >
-            Atriz · Produtora Cultural · Contadora de Histórias · Arte-Educadora
-          </motion.p>
-
-          <div className="overflow-hidden">
-            <motion.h1
+          {/* Top content: Name in right corner on mobile */}
+          <div className="flex flex-col items-end text-right md:items-start md:text-left">
+            <motion.p
               variants={reveal}
               initial="hidden"
               animate="show"
-              className="font-display text-[clamp(4rem,10vw,9rem)] text-white leading-none"
+              className="font-sans font-bold text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.22em] md:tracking-[0.35em] text-amber-100 mb-1 md:mb-6 max-w-[240px] md:max-w-none text-right md:text-left"
             >
-              Stephany
-            </motion.h1>
-          </div>
-          <div className="overflow-hidden">
-            <motion.h1
+              Atriz · Produtora Cultural · Contadora de Histórias · Arte-Educadora
+            </motion.p>
+
+            <div className="overflow-hidden">
+              <motion.h1
+                variants={reveal}
+                initial="hidden"
+                animate="show"
+                className="font-display text-[2.6rem] sm:text-5xl md:text-[clamp(4rem,10vw,9rem)] text-white leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] text-right md:text-left"
+              >
+                Stephany
+              </motion.h1>
+            </div>
+            <div className="overflow-hidden">
+              <motion.h1
+                variants={reveal}
+                initial="hidden"
+                animate="show"
+                className="font-display text-[2.6rem] sm:text-5xl md:text-[clamp(4rem,10vw,9rem)] text-crimson leading-none mb-2 md:mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] text-right md:text-left"
+              >
+                Metódio
+              </motion.h1>
+            </div>
+
+            <motion.div
               variants={reveal}
               initial="hidden"
               animate="show"
-              className="font-display text-[clamp(4rem,10vw,9rem)] text-crimson leading-none mb-8"
-            >
-              Metódio
-            </motion.h1>
+              className="hidden md:block w-16 h-px bg-terracota mb-8"
+            />
           </div>
 
-          <motion.div
-            variants={reveal}
-            initial="hidden"
-            animate="show"
-            className="w-16 h-px bg-terracota mb-8"
-          />
-
-          <motion.p
-            variants={reveal}
-            initial="hidden"
-            animate="show"
-            className="font-serif italic text-amber-100 text-lg max-w-md leading-relaxed mb-10"
-          >
-            Narrando mundos, educando corpos e transformando vidas através da arte e da palavra.
-          </motion.p>
-
-          <motion.div
-            variants={reveal}
-            initial="hidden"
-            animate="show"
-            className="flex flex-wrap gap-4"
-          >
-            <Link
-              href="/sobre"
-              className="bg-crimson text-yellow font-sans font-semibold text-xs uppercase tracking-widest px-8 py-4 hover:bg-white hover:text-ink transition-colors duration-300"
+          {/* Bottom content: Buttons in right corner on mobile */}
+          <div className="flex flex-col items-end md:items-start">
+            <motion.p
+              variants={reveal}
+              initial="hidden"
+              animate="show"
+              className="hidden md:block font-serif italic text-amber-100 text-lg max-w-md leading-relaxed mb-10 text-left"
             >
-              Sobre mim
-            </Link>
-            <Link
-              href="/projetos"
-              className="border border-terracota text-amber-100 font-sans text-xs uppercase tracking-widest px-8 py-4 hover:bg-terracota hover:text-[brown] transition-all duration-300"
+              Narrando mundos, educando corpos e transformando vidas através da arte e da palavra.
+            </motion.p>
+
+            <motion.div
+              variants={reveal}
+              initial="hidden"
+              animate="show"
+              className="flex flex-wrap gap-2.5 md:gap-4 justify-end md:justify-start"
             >
-              Ver Projetos
-            </Link>
-          </motion.div>
+              <Link
+                href="/sobre"
+                className="bg-crimson text-yellow font-sans font-semibold text-[11px] md:text-xs uppercase tracking-widest px-5 py-3 md:px-8 md:py-4 hover:bg-white hover:text-ink transition-colors duration-300 shadow-lg shadow-black/30"
+              >
+                Sobre mim
+              </Link>
+              <Link
+                href="/projetos"
+                className="border border-amber-100/50 bg-ink/50 backdrop-blur-md text-amber-100 font-sans text-[11px] md:text-xs uppercase tracking-widest px-5 py-3 md:px-8 md:py-4 hover:bg-terracota hover:text-brown transition-all duration-300 shadow-lg shadow-black/30"
+              >
+                Ver Projetos
+              </Link>
+            </motion.div>
+          </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
@@ -396,7 +402,7 @@ export default function HomePage() {
           >
             {[
               { label: 'E-mail', value: 'stephany.metodio@email.com', href: 'mailto:stephany.metodio@email.com', icon: '✉' },
-              { label: 'WhatsApp', value: '+55 11 9 9999-9999', href: 'https://wa.me/5511999999999', icon: '◎' },
+              { label: 'WhatsApp', value: '+55 11 9 9999-9999', href: 'https://wa.me/5587981480808', icon: '◎' },
               { label: 'Instagram', value: '@stephanymetodio', href: 'https://instagram.com/stephanymetodio', icon: '◇' },
               { label: 'YouTube', value: 'Stephany Metódio', href: 'https://youtube.com/@stephanymetodio', icon: '▷' },
             ].map(item => (

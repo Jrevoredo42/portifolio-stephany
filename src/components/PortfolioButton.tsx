@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const materials = [
@@ -14,26 +15,43 @@ const materials = [
 
 export default function PortfolioButton() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', handler, { passive: true })
+    return () => window.removeEventListener('scroll', handler)
+  }, [])
+
+  const isHome = pathname === '/'
+  const showButton = !isHome || scrolled
 
   return (
     <>
-      <motion.button
-        onClick={() => setOpen(true)}
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        whileHover={{ scale: 1.04 }}
-        whileTap={{ scale: 0.97 }}
-        className="fixed right-6 bottom-6 z-40 bg-gold text-brown font-sans font-semibold text-xs uppercase tracking-widest px-5 py-3.5 shadow-lg shadow-gold/20 flex items-center gap-2.5 hover:bg-white transition-colors duration-300 cursor-pointer"
-        style={{ writingMode: 'horizontal-tb' }}
-      >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Portfólio / Materiais
-      </motion.button>
+      <AnimatePresence>
+        {showButton && (
+          <motion.button
+            key="portfolio-btn"
+            onClick={() => setOpen(true)}
+            initial={{ x: 80, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 80, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className="fixed right-6 bottom-6 z-40 bg-gold text-brown font-sans font-semibold text-xs uppercase tracking-widest px-5 py-3.5 shadow-lg shadow-gold/20 flex items-center gap-2.5 hover:bg-white transition-colors duration-300 cursor-pointer"
+            style={{ writingMode: 'horizontal-tb' }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Portfólio / Materiais
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {open && (

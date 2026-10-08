@@ -37,6 +37,8 @@ export default function Navigation() {
     return pathname === href || pathname.startsWith(href + '/')
   }
 
+  const isHome = pathname === '/'
+
   return (
     <>
       <motion.nav
@@ -51,7 +53,11 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link
             href="/"
-            className="flex flex-col leading-none group"
+            className={`flex flex-col leading-none group transition-all duration-300 ${
+              isHome && !scrolled && !mobileOpen
+                ? 'opacity-0 -translate-y-2 pointer-events-none lg:opacity-100 lg:translate-y-0 lg:pointer-events-auto'
+                : 'opacity-100 translate-y-0 pointer-events-auto'
+            }`}
             onClick={() => setMobileOpen(false)}
           >
             <span className="font-display text-yellow text-xl tracking-wide group-hover:text-white transition-colors duration-300">
@@ -87,20 +93,20 @@ export default function Navigation() {
 
           <button
             onClick={() => setMobileOpen(v => !v)}
-            className="lg:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 group"
+            className="lg:hidden w-7 h-7 flex flex-col items-center justify-center gap-1 group cursor-pointer"
             aria-label="Menu"
           >
             <motion.span
-              animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-              className="block w-6 h-px bg-gold"
+              animate={mobileOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
+              className="block w-5 h-[1.5px] bg-yellow"
             />
             <motion.span
               animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="block w-6 h-px bg-gold"
+              className="block w-5 h-[1.5px] bg-yellow"
             />
             <motion.span
-              animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-              className="block w-6 h-px bg-gold"
+              animate={mobileOpen ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
+              className="block w-5 h-[1.5px] bg-yellow"
             />
           </button>
         </div>

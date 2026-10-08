@@ -1,10 +1,9 @@
 "use client";
 
 import { motion } from 'framer-motion'
-import coletivoTear from '@/assets/coletivo-tear.png'
 import sterPremio from '@/assets/ster/sterPremio.png'
-import ayoPerformance from '@/assets/ayo-performance.png'
-import stephanyNarrando from '@/assets/stephany-narrando.png'
+import gabi from '@/assets/gabi.jpg'
+import revoredo from '@/assets/revoredo-show.jpg'
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -40,14 +39,12 @@ const servicos = [
 
 const projProduzidos = [
   {
-    titulo: 'Festival Tear de Artes Cênicas',
-    desc: 'Festival anual de teatro e contação de histórias periférico, realizado em São Paulo. 6 edições, +40 grupos, +5.000 espectadores.',
-    img: sterPremio.src,
+    titulo: 'Revoredo',
+    img: revoredo.src,
   },
   {
-    titulo: 'Gira Cultural — Coletivo Tear',
-    desc: 'Circulação de espetáculos do Coletivo em escolas públicas e comunidades de periferia em 3 estados.',
-    img: ayoPerformance.src,
+    titulo: 'Gabi da Pele Preta',
+    img: gabi.src,
   },
 ]
 
@@ -122,7 +119,7 @@ export default function ProducaoPage() {
               viewport={{ once: true }}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.3 }}
-              className={`border ${s.cor.split(' ')[1]} bg-brown/40 p-8 hover:bg-brown transition-all duration-300`}
+              className={`border ${s.cor.split(' ')[1]} bg-brown/40 p-8 hover:bg-purple transition-all duration-300`}
             >
               <span className={`text-3xl block mb-5 ${s.cor.split(' ')[0]}`}>{s.icon}</span>
               <h3 className="font-serif text-white font-semibold text-xl mb-3">{s.titulo}</h3>
@@ -132,15 +129,15 @@ export default function ProducaoPage() {
         </div>
       </section>
 
-      {/* ── PROJETOS PRODUZIDOS ───────────────────────────── */}
+      {/* ── ARTISTAS PRODUZIDOS ───────────────────────────── */}
       <section className="bg-brown/30 py-20">
         <div className="max-w-7xl mx-auto px-8">
           <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="mb-14">
-            <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-gold/70 mb-3">Histórico</p>
-            <h2 className="font-display text-4xl text-white">Projetos <span className="text-gold">Produzidos</span></h2>
+            <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-yellow mb-3">Produção Executiva</p>
+            <h2 className="font-display text-4xl text-white">Artistas <span className="text-gold">Produzidos</span></h2>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
             {projProduzidos.map((p) => (
               <motion.div
                 key={p.titulo}
@@ -150,15 +147,14 @@ export default function ProducaoPage() {
                 viewport={{ once: true, margin: '-40px' }}
                 className="group"
               >
-                <div className="h-48 overflow-hidden mb-4">
+                <div className="aspect-video w-full overflow-hidden mb-4 rounded-sm">
                   <img
                     src={p.img}
                     alt={p.titulo}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 block"
                   />
                 </div>
-                <h3 className="font-serif text-white font-semibold text-lg mt-1 mb-2 group-hover:text-gold transition-colors">{p.titulo}</h3>
-                <p className="font-sans text-white/50 text-xs leading-relaxed">{p.desc}</p>
+                <h3 className="font-display text-yellow font-semibold text-lg mt-1 mb-2 group-hover:text-gold transition-colors">{p.titulo}</h3>
               </motion.div>
             ))}
           </div>
@@ -169,14 +165,14 @@ export default function ProducaoPage() {
       <section className="py-20 max-w-7xl mx-auto px-8">
         <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="bg-purple border border-gold/20 p-10 lg:p-14 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-gold/70 mb-4">Captação de Recursos</p>
+            <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-yellow  mb-4">Captação de Recursos</p>
             <h3 className="font-display text-3xl text-white mb-4">Projetos aprovados <span className="text-gold">em editais</span></h3>
-            <p className="font-sans text-white/60 text-sm leading-relaxed">
-              Experiência comprovada na elaboração de projetos para Lei Rouanet (Mecenato e FNC), ProAC, Fundo Nacional de Cultura, BNDES e fundações privadas. Mais de 15 projetos aprovados em editais públicos estaduais e federais.
+            <p className="font-sans text-white-amber-100 text-sm leading-relaxed">
+              Experiência comprovada na elaboração e aprovação de projetos para Lei Rouanet, BNB, Sesc Pulsar RJ, Lei Aldir Blanc, Lei Paulo Gustavo, Registro de Patrimônio Vivo Pernambuco, Funcultura, BNDES Cultural, Mais de 40 projetos aprovados em editais públicos e privados estaduais e federais.
             </p>
           </div>
           <div className="space-y-3">
-            {['Lei Rouanet — Mecenato', 'ProAC — SP', 'Fundo Nacional de Cultura', 'BNDES Sociocultural', 'Edital SESC de Artes Cênicas', 'Editais Municipais SP, RJ e SSA'].map((e) => (
+            {['Lei Rouanet', 'Lei Aldir Blanc', 'Lei Paulo Gustavo', 'BNDES Cultural', 'Sesc Pulsar RJ', 'Funcultura', 'Registro de Patrimônio Vivo Pernambuco', 'BNB'].map((e) => (
               <motion.div
                 key={e}
                 variants={reveal}
@@ -186,7 +182,7 @@ export default function ProducaoPage() {
                 className="flex items-center gap-3"
               >
                 <div className="w-1.5 h-1.5 bg-gold rounded-full shrink-0" />
-                <span className="font-sans text-white/65 text-sm">{e}</span>
+                <span className="font-sans text-amber-100 text-sm">{e}</span>
               </motion.div>
             ))}
           </div>
@@ -199,7 +195,7 @@ export default function ProducaoPage() {
           <h3 className="font-display text-3xl text-white mb-3">Vamos construir algo juntos?</h3>
           <p className="font-sans text-white/70 text-sm mb-8">Produção, curadoria, gestão ou captação — entre em contato</p>
           <a
-            href="mailto:stephany.metodio@email.com"
+            href="https://wa.me/5587981480808?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20proposta%20de%20form%C3%A7%C3%A3o"
             className="inline-block bg-white text-crimson font-sans font-semibold text-xs uppercase tracking-widest px-10 py-4 hover:bg-gold hover:text-brown transition-colors"
           >
             Falar sobre um projeto →
