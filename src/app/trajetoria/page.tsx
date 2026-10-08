@@ -18,30 +18,21 @@ type Evento = {
   desc: string
   tipo: TipoEvento
 }
-{/*
+
 const eventos: Evento[] = [
-  { ano: '2026', titulo: 'Turnê Luanda Ruanda Sesc Pulsar', desc: 'Luanda Ruanda - Histórias Africanas desembarca no Rio de Janeiro para uma circulação muito especial foram 10 apresentações, em 10 unidades do Sesc RJ, através do Edital Sesc RJ Pulsar 2026.', tipo: 'espetaculo' },
-  { ano: '2026', titulo: 'Primeiro Espetáculo', desc: '"As Filhas da Noite" — primeiro espetáculo solo de contação, apresentado no Teatro SESI BA e em festivais regionais.', tipo: 'espetaculo' },
-  { ano: '2010', titulo: 'Chegada a São Paulo', desc: 'Mudança para SP. Formação em pedagogia do teatro na ECA/USP e integração à cena alternativa paulistana.', tipo: 'formacao' },
-  { ano: '2012', titulo: 'Coletivo Tear', desc: 'Fundação do Coletivo Tear, grupo de criação e produção artística voltado para arte periférica e contação de histórias.', tipo: 'institucional' },
-  { ano: '2014', titulo: 'Primeira Circulação Internacional', desc: 'Festival Internacional de Contação de Histórias em Lisboa, Portugal. Apresentação de "As Filhas da Noite" em 3 cidades.', tipo: 'internacional' },
-  { ano: '2016', titulo: 'Luanda Ruanda', desc: 'Estreia do espetáculo "Luanda Ruanda" no SESC Pinheiros. O espetáculo entra em circulação nacional e recebe prêmio de melhor espetáculo no Festival Cena Aberta.', tipo: 'espetaculo' },
-  { ano: '2017', titulo: 'Reconhecimento Nacional', desc: 'Indicação ao Prêmio Shell de Teatro na categoria Melhor Atriz — Teatro Infantil e Jovem. Festival de Contação, RJ.', tipo: 'premio' },
-  { ano: '2018', titulo: 'Festival Tear I', desc: 'Primeira edição do Festival Tear de Artes Cênicas, realizado na Zona Leste de SP. 12 grupos, 3 mil espectadores, 5 dias de programação.', tipo: 'institucional' },
-  { ano: '2019', titulo: 'Residência na Nigéria', desc: 'Residência artística no Instituto Obá, Lagos, Nigéria. Pesquisa sobre teatro iorubá e tradições orais da África Ocidental.', tipo: 'internacional' },
-  { ano: '2020', titulo: 'Ayô', desc: 'Estreia de "Ayô", espetáculo de contos e danças de matriz iorubá. Adaptação para formato online durante a pandemia.', tipo: 'espetaculo' },
-  { ano: '2021', titulo: 'O Livro em Cena', desc: 'Lançamento do projeto "O Livro em Cena" em parceria com o MEC. Programa alcança 40 escolas públicas em 3 estados.', tipo: 'institucional' },
-  { ano: '2022', titulo: 'Turnê — 8 Estados', desc: '"Ayô" realiza turnê por 8 estados brasileiros. Angola, Moçambique e Alemanha completam a circulação internacional do espetáculo.', tipo: 'internacional' },
-  { ano: '2023', titulo: 'FLIP', desc: 'Curadoria e apresentações na Festa Literária Internacional de Paraty. "O Livro em Cena" abre a programação infantil do festival.', tipo: 'premio' },
-  { ano: '2024', titulo: 'Expansão em Arte-Educação', desc: 'Parceria com SESC SP para programa anual de formação de educadores. Mais de 200 professores formados ao longo do ano.', tipo: 'formacao' },
-  { ano: '2025', titulo: 'Novos Horizontes', desc: 'Desenvolvimento de novo espetáculo, manutenção da agenda de formações e planejamento de circulação europeia de "Luanda Ruanda".', tipo: 'espetaculo' },
+  { ano: '2026', titulo: 'Mestranda Profissional em Artes da Cena', desc: 'Laboratório em Artes e Mediação Cultural', tipo: 'formacao' },
+  { ano: '2023 - 2024', titulo: 'Professora de Produção Cultural', desc: 'Professora nos cursos de Qualificação em Produção Cultural Executiva do Programa Minas, do Porto digital, voltados para mulheres, mulheres trans e travestis', tipo: 'institucional' },
+  { ano: '2023', titulo: 'Pós Graduação IFPE', desc: 'Pós-Graduação Intercultural Indígena-Quilombola Antirracista.', tipo: 'formacao' },
+  { ano: '2021', titulo: 'Graduação em Letras', desc: 'Graduação em Letras pela Universidade de Pernambuco', tipo: 'formacao' },
+  { ano: '2022 - atual', titulo: 'Professora de Produção Cultural e Economia Criativa', desc: 'Professora de Produção Cultural e Economia Criativa no curso EJA do Sesc/Senac Garanhuns', tipo: 'institucional' },
+  { ano: '2021', titulo: 'Gerente de Cultura da Secult', desc: 'Gerente de Cultura da Secretaria de Cultura de Garanhuns', tipo: 'institucional' },
 ]
- 
+
 const tipoCor: Record<TipoEvento, { dot: string; label: string; tag: string }> = {
   espetaculo: { dot: 'bg-gold', label: 'Espetáculo', tag: 'text-white bg-gold border-gold/30' },
   premio: { dot: 'bg-azure', label: 'Prêmio / Destaque', tag: 'text-azure border-azure/30' },
-  formacao: { dot: 'bg-crimson', label: 'Formação', tag: 'text-crimson border-crimson/30' },
-  institucional: { dot: 'bg-purple', label: 'Institucional', tag: 'text-purple border-purple/30' },
+  formacao: { dot: 'bg-gold', label: 'Formação', tag: 'text-white bg-gold border-crimson/30' },
+  institucional: { dot: 'bg-purple', label: 'Institucional', tag: 'text-yellow bg-purple border-purple/30' },
   internacional: { dot: 'bg-wine', label: 'Internacional', tag: 'text-wine border-wine/30' },
 }
 
@@ -59,7 +50,7 @@ function TimelineItem({ evento, index }: { evento: Evento; index: number }) {
       style={{ opacity, x }}
       className="grid grid-cols-[1fr_auto_1fr] gap-0 items-start bg-crimson"
     >
-     
+
       <div className={`pb-12 pr-10 ${esquerda ? 'text-right' : ''}`}>
         {esquerda ? (
           <div className="space-y-2">
@@ -120,7 +111,7 @@ function TimelineItemMobile({ evento }: { evento: Evento }) {
     </motion.div>
   )
 }
-*/}
+
 export default function TrajetoriaPage() {
   return (
     <div className="bg-crimson min-h-screen">
@@ -162,8 +153,8 @@ export default function TrajetoriaPage() {
           </motion.div>
         </div>
       </section>
-
-      {/* ── LEGENDA ────────────────────────────────────────
+      {/*
+      ── LEGENDA ────────────────────────────────────────
       <section className="max-w-7xl mx-auto px-8 pb-12">
         <motion.div
           variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
@@ -178,20 +169,20 @@ export default function TrajetoriaPage() {
         </motion.div>
       </section>
 
-     
+*/}
       <section className="max-w-5xl mx-auto px-8 pb-24 hidden lg:block">
         {eventos.map((evento, i) => (
           <TimelineItem key={evento.ano + evento.titulo} evento={evento} index={i} />
         ))}
       </section>
 
-   
+
       <section className="max-w-2xl mx-auto px-8 pb-24 lg:hidden">
         {eventos.map(evento => (
           <TimelineItemMobile key={evento.ano + evento.titulo} evento={evento} />
         ))}
       </section>
-      */}
+
 
       {/* ── RECONHECIMENTOS ──────────────────────────────── */}
       <section className="bg-purple py-20">
@@ -227,7 +218,8 @@ export default function TrajetoriaPage() {
         </div>
       </section>
 
-      {/* ── CIRCULAÇÕES ──────────────────────────────────── */}
+
+      {/** 
       <section className="py-20 max-w-7xl mx-auto px-8">
         <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="mb-10">
           <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-yellow mb-3">Circulação Nacional e Estadual</p>
@@ -243,7 +235,7 @@ export default function TrajetoriaPage() {
               ))}
             </div>
           </motion.div>
-
+          
           <motion.div custom={1} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
             <p className="font-sans text-[10px] uppercase tracking-widest text-amber-100 mb-5">Internacional</p>
             <div className="space-y-3">
@@ -261,8 +253,10 @@ export default function TrajetoriaPage() {
               ))}
             </div>
           </motion.div>
-        </div>
-      </section>
+        
     </div>
+      </section >
+        */}
+    </div >
   )
 }
