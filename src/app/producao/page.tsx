@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import coletivoTear from '@/assets/coletivo-tear.png'
-import luandaRuanda from '@/assets/luanda-ruanda.png'
+import sterPremio from '@/assets/ster/sterPremio.png'
 import ayoPerformance from '@/assets/ayo-performance.png'
 import stephanyNarrando from '@/assets/stephany-narrando.png'
 
@@ -32,30 +32,22 @@ const servicos = [
   },
   {
     titulo: 'Captação de Recursos',
-    desc: 'Elaboração de projetos para leis de incentivo, editais públicos e fundações privadas. Lei Rouanet, ProAC e BNDES.',
+    desc: 'Elaboração de projetos para leis de incentivo, editais públicos e fundações privadas. Funcultura, PNAB, Itaú Cultural, Paulo Gustavo e etc.',
     icon: '◎',
-    cor: 'text-purple border-purple/30',
+    cor: 'text-yellow border-purple/30',
   },
 ]
 
 const projProduzidos = [
   {
     titulo: 'Festival Tear de Artes Cênicas',
-    ano: '2018–2023',
     desc: 'Festival anual de teatro e contação de histórias periférico, realizado em São Paulo. 6 edições, +40 grupos, +5.000 espectadores.',
-    img: luandaRuanda.src,
+    img: sterPremio.src,
   },
   {
     titulo: 'Gira Cultural — Coletivo Tear',
-    ano: '2020–2024',
     desc: 'Circulação de espetáculos do Coletivo em escolas públicas e comunidades de periferia em 3 estados.',
     img: ayoPerformance.src,
-  },
-  {
-    titulo: 'Mostra Negra em Cena',
-    ano: '2022',
-    desc: 'Curadoria e gestão da mostra de artes afro-brasileiras no Centro Cultural da Juventude, SP. 12 grupos participantes.',
-    img: stephanyNarrando.src,
   },
 ]
 
@@ -76,7 +68,7 @@ export default function ProducaoPage() {
         <motion.div custom={2} variants={reveal} initial="hidden" animate="show" className="w-16 h-px bg-gold mb-8" />
         <motion.p
           custom={3} variants={reveal} initial="hidden" animate="show"
-          className="font-serif italic text-white/60 text-xl max-w-xl leading-relaxed"
+          className="font-serif italic text-amber-100 text-xl max-w-xl leading-relaxed"
         >
           A produção cultural como ato político. Gestão que não abdica da poesia.
         </motion.p>
@@ -87,37 +79,28 @@ export default function ProducaoPage() {
         <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
             <div className="relative overflow-hidden aspect-4/3">
-              <img src={coletivoTear.src} alt="Coletivo Tear em performance" className="w-full h-full object-cover" />
+              <img src={sterPremio.src} alt="Coletivo Tear em performance" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-linear-to-t from-brown/70 to-transparent" />
               <div className="absolute bottom-6 left-6">
-                <span className="font-sans text-[10px] uppercase tracking-widest text-gold/70">Coletivo Tear</span>
+                <span className="font-sans text-[10px] uppercase tracking-widest text-yellow">Prêmio de Produtora Cultural</span>
               </div>
             </div>
           </motion.div>
 
           <motion.div custom={1} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="space-y-6">
             <div>
-              <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-gold/70 mb-3">Coletivo Tear</p>
+              <p className="font-sans text-[12px] uppercase tracking-[0.35em] text-gold mb-3">Coletivo Tear</p>
               <h2 className="font-display text-4xl text-white mb-4">Tecendo redes, <span className="text-gold">fazendo arte</span></h2>
             </div>
-            <p className="font-sans text-white/65 leading-loose">
-              O <strong className="text-gold">Coletivo Tear</strong> foi fundado em 2012 por Stephany Metódio com a missão de produzir, circular e fomentar arte cênica de qualidade em territórios fora dos grandes circuitos culturais. O grupo é formado por artistas, educadores e produtores culturais comprometidos com a arte como direito.
+            <p className="font-sans text-amber-100 leading-loose">
+              Além da atuação artística, Stephany desenvolve um trabalho sólido como gestora e estrategista de carreiras artísticas, sendo responsável pela gestão dos artistas Gabi da Pele Preta e Revoredo. Em suas estratégias, atua diretamente com planejamento de carreira, posicionamento de marca, gestão de produtos, elaboração de narrativas, circulação, presença digital e fortalecimento de imagem.
             </p>
-            <p className="font-sans text-white/65 leading-loose">
-              Em mais de uma década de existência, o Tear já produziu 6 espetáculos autorais, realizou 4 edições do Festival Tear de Artes Cênicas, viabilizou a circulação em +80 cidades e formou centenas de artistas e educadores por meio de suas oficinas.
+            <p className="font-sans text-amber-100 leading-loose">
+              É fundadora da célula empreendedora Tearte, da editora Cartonera Severina Catadora e do selo musical Studio Tear — iniciativas que articulam produção cultural, economia criativa e desenvolvimento de produtos artísticos.
             </p>
-            <div className="grid grid-cols-3 gap-4 pt-4">
-              {[
-                { num: '12', label: 'Anos' },
-                { num: '6', label: 'Espetáculos' },
-                { num: '+80', label: 'Cidades' },
-              ].map(s => (
-                <div key={s.label} className="border border-gold/20 p-4 text-center">
-                  <p className="font-display text-3xl text-gold">{s.num}</p>
-                  <p className="font-sans text-white/40 text-xs uppercase tracking-wider mt-1">{s.label}</p>
-                </div>
-              ))}
-            </div>
+            <p className="font-sans text-amber-100 leading-loose">
+              Toda essa atuação envolve práticas integradas de marketing cultural, branding, vendas, análise de público, construção de marca e planejamento de lançamentos, áreas centrais para o produtor e gestor cultural contemporâneo. Por isso, sua experiência prática se relaciona diretamente com os conteúdos do componente curricular Marketing e Vendas, para o qual possui plena qualificação.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -143,7 +126,7 @@ export default function ProducaoPage() {
             >
               <span className={`text-3xl block mb-5 ${s.cor.split(' ')[0]}`}>{s.icon}</span>
               <h3 className="font-serif text-white font-semibold text-xl mb-3">{s.titulo}</h3>
-              <p className="font-sans text-white/55 text-sm leading-relaxed">{s.desc}</p>
+              <p className="font-sans text-amber-100 text-sm leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -174,7 +157,6 @@ export default function ProducaoPage() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
-                <span className="font-sans text-[10px] uppercase tracking-widest text-gold/50">{p.ano}</span>
                 <h3 className="font-serif text-white font-semibold text-lg mt-1 mb-2 group-hover:text-gold transition-colors">{p.titulo}</h3>
                 <p className="font-sans text-white/50 text-xs leading-relaxed">{p.desc}</p>
               </motion.div>
@@ -185,7 +167,7 @@ export default function ProducaoPage() {
 
       {/* ── CAPTAÇÃO ─────────────────────────────────────── */}
       <section className="py-20 max-w-7xl mx-auto px-8">
-        <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="bg-brown border border-gold/20 p-10 lg:p-14 grid lg:grid-cols-2 gap-12 items-center">
+        <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="bg-purple border border-gold/20 p-10 lg:p-14 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-gold/70 mb-4">Captação de Recursos</p>
             <h3 className="font-display text-3xl text-white mb-4">Projetos aprovados <span className="text-gold">em editais</span></h3>
