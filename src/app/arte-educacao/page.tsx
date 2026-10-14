@@ -1,8 +1,9 @@
 "use client";
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import stephanyApresentando from '@/assets/ster/sterApresentando3.jpeg'
-import sterArteEducacao from '@/assets/ster/sterArteEducacao.jpeg'
+import stephanyApresentando from '@/assets/ster/sterApresentando3.webp'
+import sterArteEducacao from '@/assets/ster/sterArteEducacao.webp'
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -72,8 +73,15 @@ export default function ArteEducacaoPage() {
       {/* ── CABEÇALHO ────────────────────────────────────── */}
       <section className="pt-40 pb-16 relative overflow-hidden">
         <div className="absolute right-0 top-0 bottom-0 w-1/3 lg:w-2/5 hidden lg:block">
-          <img src={stephanyApresentando.src} alt="" className="w-full h-full object-cover " />
-          <div className="absolute inset-0 bg-linear-to-r from-purple/10 to-transparent" />
+          <Image
+            src={stephanyApresentando}
+            alt="Stephany apresentando"
+            fill
+            priority
+            sizes="40vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-purple/10 to-transparent pointer-events-none" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8">
           <motion.p variants={reveal} initial="hidden" animate="show" className="font-sans text-[10px] uppercase tracking-[0.35em] text-yellow mb-4">
@@ -97,12 +105,14 @@ export default function ArteEducacaoPage() {
             variants={reveal}
             initial="hidden"
             animate="show"
-            className="mt-8 lg:hidden rounded-2xl overflow-hidden shadow-xl aspect-4/3 max-w-md border border-gold/20"
+            className="relative mt-8 lg:hidden rounded-2xl overflow-hidden shadow-xl aspect-4/3 max-w-md border border-gold/20"
           >
-            <img
-              src={stephanyApresentando.src}
+            <Image
+              src={stephanyApresentando}
               alt="Stephany Metódio apresentando"
-              className="w-full h-full object-cover object-top"
+              fill
+              sizes="(max-width: 1024px) 100vw, 400px"
+              className="object-cover object-top"
             />
           </motion.div>
         </div>
@@ -118,12 +128,14 @@ export default function ArteEducacaoPage() {
               <div className="w-8 h-px bg-gold mb-6" />
             </div>
             <div className="relative overflow-hidden rounded-2xl shadow-lg aspect-4/3 lg:aspect-4/3 mt-2 border border-purple/20">
-              <img
-                src={sterArteEducacao.src}
+              <Image
+                src={sterArteEducacao}
                 alt="Stephany em atividade de Arte-Educação e Formação"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
             </div>
           </motion.div>
           <motion.div custom={1} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} className="lg:col-span-2 space-y-5">

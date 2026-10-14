@@ -2,17 +2,18 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
-import stephanyHero from '@/assets/stephany-mascara-nobg.png'
-import luandaRuanda from '@/assets/luanda-ruanda.png'
-import ayoPerformance from '@/assets/luanda-ruanda/sterAyo.jpeg'
-import stephanyNarrando from '@/assets/stephany-narrando.png'
-import coletivoTear from '@/assets/coletivo-tear.png'
-import sterMaoPraCima from '@/assets/luanda-ruanda/sterMaoPraCima.jpeg'
-import sterPremio from '@/assets/ster/sterPremio.png'
-import sterStudioTear from '@/assets/ster/sterStudioTear.jpeg'
-import sterArteEducacao from '@/assets/ster/sterArteEducacao.jpeg'
+import stephanyHero from '@/assets/stephany-mascara-nobg.webp'
+import luandaRuanda from '@/assets/luanda-ruanda.webp'
+import ayoPerformance from '@/assets/luanda-ruanda/sterAyo.webp'
+import stephanyNarrando from '@/assets/stephany-narrando.webp'
+import coletivoTear from '@/assets/coletivo-tear.webp'
+import sterMaoPraCima from '@/assets/luanda-ruanda/sterMaoPraCima.webp'
+import sterPremio from '@/assets/ster/sterPremio.webp'
+import sterStudioTear from '@/assets/ster/sterStudioTear.webp'
+import sterArteEducacao from '@/assets/ster/sterArteEducacao.webp'
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -20,39 +21,39 @@ const reveal = {
 }
 
 const agenda = [
-  { date: '28 Out', event: 'Luanda Ruanda', local: 'Teatro Municipal, São Paulo — SP', tipo: 'Espetáculo' },
-  { date: '4 Nov', event: 'Ayô — Contos e Danças', local: 'Festival Internacional de Contação, BH', tipo: 'Festival' },
-  { date: '10–11 Nov', event: 'Formação em Arte-Educação', local: 'SESC Pinheiros, São Paulo — SP', tipo: 'Formação' },
-  { date: '18 Nov', event: 'O Livro em Cena', local: 'FLIP — Festa Literária de Paraty', tipo: 'Evento' },
-  { date: '5 Dez', event: 'Histórias da Caixola', local: 'Centro Cultural Banco do Brasil, RJ', tipo: 'Espetáculo' },
+  { date: '13 Set', event: 'Luanda Ruanda Circulação Sesc Pulsar', local: 'Barra Mansa — RJ', tipo: 'Espetáculo' },
+  { date: '12 Set', event: 'Luanda Ruanda Circulação Sesc Pulsar', local: 'Cocotá — RJ', tipo: 'Espetáculo' },
+  { date: '11 Set', event: 'Luanda Ruanda  Circulação Sesc Pulsar', local: 'São Gonçalo — RJ', tipo: 'Espetáculo' },
+  { date: '10 Set', event: 'Luanda Ruanda Circulação Sesc Pulsar', local: 'Niterói — RJ', tipo: 'Espetáculo' },
+  { date: '9 Set', event: 'Luanda Ruanda Circulação Sesc Pulsar', local: 'Duque de Caxias — RJ', tipo: 'Espetáculo' },
 ]
 
 const destaques = [
   {
     titulo: 'Luanda Ruanda',
     descricao: 'Espetáculo de contação que tece memórias africanas e afro-brasileiras.',
-    img: luandaRuanda.src,
+    img: luandaRuanda,
     categoria: 'Teatro & Contação',
     href: '/projetos',
   },
   {
     titulo: 'Ayô',
     descricao: 'Performance de contos e danças de matriz iorubá. Alegria como resistência.',
-    img: ayoPerformance.src,
+    img: ayoPerformance,
     categoria: 'Performance',
     href: '/projetos',
   },
   {
     titulo: 'Arte-Educação',
     descricao: 'Oficinas e formações que transformam a sala de aula em palco de vida.',
-    img: sterArteEducacao.src,
+    img: sterArteEducacao,
     categoria: 'Educação',
     href: '/arte-educacao',
   },
 ]
 
 const tipoCor: Record<string, string> = {
-  'Espetáculo': 'bg-yellow font-bold text-brown border-yellow/40',
+  'Espetáculo': 'bg-azure font-bold text-amber-100 border-yellow/40',
   'Festival': 'text-amber-100 bg-crimson font-bold border-crimson/40',
   'Formação': 'bg-brown text-amber-100 font-bold border-[#463f1a]/40',
   'Evento': 'bg-azure text-amber-100 font-bold border-azure/40',
@@ -75,10 +76,13 @@ export default function HomePage() {
           <div
             className="relative w-full md:w-3/5 lg:w-[55%] h-full hero-mask"
           >
-            <img
-              src={stephanyHero.src}
+            <Image
+              src={stephanyHero}
               alt="Stephany Metódio em performance"
-              className="w-full h-full object-cover object-top"
+              priority
+              fill
+              sizes="(max-width: 768px) 100vw, 55vw"
+              className="object-cover object-top"
             />
           </div>
         </motion.div>
@@ -113,7 +117,7 @@ export default function HomePage() {
                 variants={reveal}
                 initial="hidden"
                 animate="show"
-                className="font-display text-[2.6rem] sm:text-5xl md:text-[clamp(4rem,10vw,9rem)] text-crimson leading-none mb-2 md:mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] text-right md:text-left"
+                className="font-display text-[2.6rem] sm:text-5xl md:text-[clamp(4rem,10vw,9rem)] text-crimson leading-none mb-2 md:mb-8  text-right md:text-left"
               >
                 Metódio
               </motion.h1>
@@ -209,18 +213,22 @@ export default function HomePage() {
           viewport={{ once: true, margin: '-80px' }}
           className="grid grid-cols-2 gap-3"
         >
-          <div className="col-span-2 h-72 overflow-hidden">
-            <img
-              src={sterMaoPraCima.src}
+          <div className="relative col-span-2 h-72 overflow-hidden">
+            <Image
+              src={sterMaoPraCima}
               alt="Stephany com máscara africana"
-              className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover object-top hover:scale-105 transition-transform duration-700"
             />
           </div>
-          <div className="h-44 overflow-hidden">
-            <img
-              src={stephanyNarrando.src}
+          <div className="relative h-44 overflow-hidden">
+            <Image
+              src={stephanyNarrando}
               alt="Stephany narrando"
-              className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              fill
+              sizes="(max-width: 768px) 50vw, 25vw"
+              className="object-cover object-top hover:scale-105 transition-transform duration-700"
             />
           </div>
           <div className="h-44 overflow-hidden bg-terracota flex flex-col items-center justify-center gap-2 p-6">
@@ -287,15 +295,15 @@ export default function HomePage() {
               className="group relative overflow-hidden bg-brown text-left block"
             >
               <Link href={item.href} className="block">
-                <div className="h-64 overflow-hidden">
-                  <motion.img
+                <div className="relative h-64 overflow-hidden">
+                  <Image
                     src={item.img}
                     alt={item.titulo}
-                    className="w-full h-full object-cover object-center"
-                    variants={{ hover: { scale: 1.08 } }}
-                    transition={{ duration: 0.5 }}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-terracota/50 via-brown/30 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-terracota/50 via-brown/30 to-transparent pointer-events-none" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="font-sans font-bold text-[10px] uppercase tracking-widest text-amber-100 mb-2">{item.categoria}</p>
@@ -324,8 +332,8 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="mb-14"
           >
-            <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-crimson mb-3">2025</p>
-            <h2 className="font-display text-4xl text-amber-100">Próximas <span className="text-yellow">Apresentações</span></h2>
+            <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-crimson mb-3">2026</p>
+            <h2 className="font-display text-4xl text-amber-100">Apresentações <span className="text-yellow">Recentes</span></h2>
           </motion.div>
 
           <div className="space-y-0">
@@ -357,19 +365,25 @@ export default function HomePage() {
 
       <section className="py-0 grid grid-cols-1 lg:grid-cols-3">
         {[
-          { src: coletivoTear.src, pos: 'object-center' },
-          { src: sterStudioTear.src, pos: 'object-top' },
-          { src: sterPremio.src, pos: 'object-top' },
+          { src: coletivoTear, pos: 'object-center' },
+          { src: sterStudioTear, pos: 'object-top' },
+          { src: sterPremio, pos: 'object-top' },
         ].map(({ src, pos }, i) => (
           <motion.div
-            key={src}
+            key={i}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15, duration: 0.7 }}
-            className="overflow-hidden h-64 lg:h-96"
+            className="relative overflow-hidden h-64 lg:h-96"
           >
-            <img src={src} alt="" className={`w-full h-full object-cover ${pos} hover:scale-105 transition-transform duration-1000`} />
+            <Image
+              src={src}
+              alt="Stephany Metódio"
+              fill
+              sizes="(max-width: 1024px) 100vw, 33vw"
+              className={`object-cover ${pos} hover:scale-105 transition-transform duration-1000`}
+            />
           </motion.div>
         ))}
       </section>
@@ -403,8 +417,8 @@ export default function HomePage() {
             {[
               { label: 'E-mail', value: 'stephany.metodio@email.com', href: 'mailto:stephany.metodio@email.com', icon: '✉' },
               { label: 'WhatsApp', value: '+55 87 9 8148-0808', href: 'https://wa.me/5587981480808', icon: '◎' },
-              { label: 'Instagram', value: '@stephanymetodio', href: 'https://instagram.com/stephanymetodio', icon: '◇' },
-              { label: 'YouTube', value: 'Stephany Metódio', href: 'https://youtube.com/@stephanymetodio', icon: '▷' },
+              { label: 'Instagram', value: '@stephanymetodio', href: 'https://www.instagram.com/stephany_metodio/', icon: '◇' },
+              { label: 'YouTube', value: 'Stephany Metódio', href: 'https://www.youtube.com/@aldeiatear1834', icon: '▷' },
             ].map(item => (
               <a
                 key={item.label}

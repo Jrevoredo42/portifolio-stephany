@@ -1,9 +1,10 @@
 "use client";
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import sterPremio from '@/assets/ster/sterPremio.png'
-import gabi from '@/assets/gabi.jpg'
-import revoredo from '@/assets/revoredo-show.jpg'
+import sterPremio from '@/assets/ster/sterPremio.webp'
+import gabi from '@/assets/gabi.webp'
+import revoredo from '@/assets/revoredo-show.webp'
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -40,11 +41,11 @@ const servicos = [
 const projProduzidos = [
   {
     titulo: 'Revoredo',
-    img: revoredo.src,
+    img: revoredo,
   },
   {
     titulo: 'Gabi da Pele Preta',
-    img: gabi.src,
+    img: gabi,
   },
 ]
 
@@ -76,9 +77,15 @@ export default function ProducaoPage() {
         <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
             <div className="relative overflow-hidden aspect-4/3">
-              <img src={sterPremio.src} alt="Coletivo Tear em performance" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-linear-to-t from-brown/70 to-transparent" />
-              <div className="absolute bottom-6 left-6">
+              <Image
+                src={sterPremio}
+                alt="Coletivo Tear em performance"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-brown/70 to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 pointer-events-none">
                 <span className="font-sans text-[10px] uppercase tracking-widest text-yellow">Prêmio de Produtora Cultural</span>
               </div>
             </div>
@@ -147,11 +154,13 @@ export default function ProducaoPage() {
                 viewport={{ once: true, margin: '-40px' }}
                 className="group"
               >
-                <div className="aspect-video w-full overflow-hidden mb-4 rounded-sm">
-                  <img
+                <div className="relative aspect-video w-full overflow-hidden mb-4 rounded-sm">
+                  <Image
                     src={p.img}
                     alt={p.titulo}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 block"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 block"
                   />
                 </div>
                 <h3 className="font-display text-yellow font-semibold text-lg mt-1 mb-2 group-hover:text-gold transition-colors">{p.titulo}</h3>

@@ -25,3 +25,4 @@ next-env.d.ts
 # beside it.
 /.plugins/
 /.opencode-skills/
+_assets_backup/

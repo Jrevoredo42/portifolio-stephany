@@ -1,70 +1,71 @@
 "use client";
 
 import { useState } from 'react'
+import Image, { type StaticImageData } from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
-import luandaRuanda from '@/assets/luanda-ruanda/ster-projeto-luanda.png'
-import livroEmCena from '@/assets/livro-em-cena.png'
+import luandaRuanda from '@/assets/luanda-ruanda/ster-projeto-luanda.webp'
+import livroEmCena from '@/assets/livro-em-cena.webp'
 
-import luandaFoto1 from '@/assets/luanda-ruanda/luanda-ruanda-projeto-1.jpg'
-import luandaFoto2 from '@/assets/luanda-ruanda/luanda-ruanda-projeto-2.jpg'
-import luandaFoto3 from '@/assets/luanda-ruanda/luanda-ruanda-projeto-3.jpeg'
-import luandaFoto4 from '@/assets/luanda-ruanda/luanda-ruanda-projeto-4.jpg'
-import luandaFoto5 from '@/assets/luanda-ruanda/luanda-ruanda-projeto-5.jpeg'
-
-
-import ayoCapa from '@/assets/ayo/ayo-capa.jpeg'
-import ayoFoto1 from '@/assets/ayo/ayo-projeto-1.jpeg'
-import ayoFoto2 from '@/assets/ayo/ayo-projeto-2.jpeg'
-
-import historiasDaCaixolaCapa from '@/assets/historias-da-caixola/historias-da-caixola-capa.jpg'
-import historiasDaCaixolaFoto1 from '@/assets/historias-da-caixola/historias-da-caixola-projeto1.jpg'
-import historiasDaCaixolaFoto2 from '@/assets/historias-da-caixola/historias-da-caixola-projeto2.jpg'
-import historiasDaCaixolaFoto3 from '@/assets/historias-da-caixola/historias-da-caixola-projeto3.jpg'
-import historiasDaCaixolaFoto4 from '@/assets/historias-da-caixola/historias-da-caixola-projeto4.jpg'
-import historiasDaCaixolaFoto5 from '@/assets/historias-da-caixola/historias-da-caixola-projeto5.jpeg'
-
-import livroEmCenaCapa from '@/assets/livro-em-cena/livro-em-cena-capa.jpeg'
-import livroEmCenaFoto1 from '@/assets/livro-em-cena/livro-em-cena1.jpeg'
-import livroEmCenaFoto2 from '@/assets/livro-em-cena/livro-em-cena2.jpeg'
-import livroEmCenaFoto3 from '@/assets/livro-em-cena/livro-em-cena3.jpeg'
-
-import severinaCatadoraCapa from '@/assets/severina-catadora/severina-catadora-capa.jpeg'
-import severinaCatadoraFoto1 from '@/assets/severina-catadora/severina-catadora1.jpeg'
-import severinaCatadoraFoto2 from '@/assets/severina-catadora/severina-catadora2.jpeg'
-import severinaCatadoraFoto3 from '@/assets/severina-catadora/severina-catadora3.jpeg'
-import severinaCatadoraFoto4 from '@/assets/severina-catadora/severina-catadora4.jpeg'
-import severinaCatadoraFoto5 from '@/assets/severina-catadora/severina-catadora5.jpeg'
-
-import cineclubinhoMalunguinhoCapa from '@/assets/cineclubinho-malunguinho/cineclubinho-malunguinho-capa.jpeg'
-import cineclubinhoMalunguinhoFoto1 from '@/assets/cineclubinho-malunguinho/cineclubinho-malunguinho1.jpeg'
-import cineclubinhoMalunguinhoFoto2 from '@/assets/cineclubinho-malunguinho/cineclubinho-malunguinho2.jpeg'
-import cineclubinhoMalunguinhoFoto3 from '@/assets/cineclubinho-malunguinho/cineclubinho-malunguinho3.jpeg'
-
-import amostraMundauCapa from '@/assets/amostra-mundau/amostra-mundau-capa.png'
-import amostraMundauFoto1 from '@/assets/amostra-mundau/amostra-mundau1.png'
-import amostraMundauFoto2 from '@/assets/amostra-mundau/amostra-mundau2.png'
-import amostraMundauFoto3 from '@/assets/amostra-mundau/amostra-mundau3.png'
-import amostraMundauFoto4 from '@/assets/amostra-mundau/amostra-mundau4.png'
-import amostraMundauFoto5 from '@/assets/amostra-mundau/amostra-mundau5.png'
-
-import studioTearCapa from '@/assets/studio-tear/studio-tear2.png'
-import studioTearFoto1 from '@/assets/studio-tear/studio-tear1.png'
-import studioTearFoto2 from '@/assets/studio-tear/studio-tear-formativo1.png'
-import studioTearFoto3 from '@/assets/studio-tear/studio-tear3.png'
-import studioTearFoto4 from '@/assets/studio-tear/studio-tear4.png'
-import studioTearFoto5 from '@/assets/studio-tear/studio-tear5.png'
-import studioTearFoto6 from '@/assets/studio-tear/studio-tear-formativo.png'
-
-import tearNaAreaCapa from '@/assets/tear-na-area/tear-na-area-capa.jpeg'
-import tearNaAreaFoto1 from '@/assets/tear-na-area/tear-na-area1.jpeg'
-import tearNaAreaFoto2 from '@/assets/tear-na-area/tear-na-area2.jpeg'
-import tearNaAreaFoto3 from '@/assets/tear-na-area/tear-na-area3.png'
-import tearNaAreaFoto4 from '@/assets/tear-na-area/tear-na-area4.png'
+import luandaFoto1 from '@/assets/luanda-ruanda/luanda-ruanda-projeto-1.webp'
+import luandaFoto2 from '@/assets/luanda-ruanda/luanda-ruanda-projeto-2.webp'
+import luandaFoto3 from '@/assets/luanda-ruanda/luanda-ruanda-projeto-3.webp'
+import luandaFoto4 from '@/assets/luanda-ruanda/luanda-ruanda-projeto-4.webp'
+import luandaFoto5 from '@/assets/luanda-ruanda/luanda-ruanda-projeto-5.webp'
 
 
-import sterComLivro from '@/assets/ster/sterComLivro.jpeg'
-import sterStudioTear from '@/assets/ster/sterStudioTear.jpeg'
+import ayoCapa from '@/assets/ayo/ayo-capa.webp'
+import ayoFoto1 from '@/assets/ayo/ayo-projeto-1.webp'
+import ayoFoto2 from '@/assets/ayo/ayo-projeto-2.webp'
+
+import historiasDaCaixolaCapa from '@/assets/historias-da-caixola/historias-da-caixola-capa.webp'
+import historiasDaCaixolaFoto1 from '@/assets/historias-da-caixola/historias-da-caixola-projeto1.webp'
+import historiasDaCaixolaFoto2 from '@/assets/historias-da-caixola/historias-da-caixola-projeto2.webp'
+import historiasDaCaixolaFoto3 from '@/assets/historias-da-caixola/historias-da-caixola-projeto3.webp'
+import historiasDaCaixolaFoto4 from '@/assets/historias-da-caixola/historias-da-caixola-projeto4.webp'
+import historiasDaCaixolaFoto5 from '@/assets/historias-da-caixola/historias-da-caixola-projeto5.webp'
+
+import livroEmCenaCapa from '@/assets/livro-em-cena/livro-em-cena-capa.webp'
+import livroEmCenaFoto1 from '@/assets/livro-em-cena/livro-em-cena1.webp'
+import livroEmCenaFoto2 from '@/assets/livro-em-cena/livro-em-cena2.webp'
+import livroEmCenaFoto3 from '@/assets/livro-em-cena/livro-em-cena3.webp'
+
+import severinaCatadoraCapa from '@/assets/severina-catadora/severina-catadora-capa.webp'
+import severinaCatadoraFoto1 from '@/assets/severina-catadora/severina-catadora1.webp'
+import severinaCatadoraFoto2 from '@/assets/severina-catadora/severina-catadora2.webp'
+import severinaCatadoraFoto3 from '@/assets/severina-catadora/severina-catadora3.webp'
+import severinaCatadoraFoto4 from '@/assets/severina-catadora/severina-catadora4.webp'
+import severinaCatadoraFoto5 from '@/assets/severina-catadora/severina-catadora5.webp'
+
+import cineclubinhoMalunguinhoCapa from '@/assets/cineclubinho-malunguinho/cineclubinho-malunguinho-capa.webp'
+import cineclubinhoMalunguinhoFoto1 from '@/assets/cineclubinho-malunguinho/cineclubinho-malunguinho1.webp'
+import cineclubinhoMalunguinhoFoto2 from '@/assets/cineclubinho-malunguinho/cineclubinho-malunguinho2.webp'
+import cineclubinhoMalunguinhoFoto3 from '@/assets/cineclubinho-malunguinho/cineclubinho-malunguinho3.webp'
+
+import amostraMundauCapa from '@/assets/amostra-mundau/amostra-mundau-capa.webp'
+import amostraMundauFoto1 from '@/assets/amostra-mundau/amostra-mundau1.webp'
+import amostraMundauFoto2 from '@/assets/amostra-mundau/amostra-mundau2.webp'
+import amostraMundauFoto3 from '@/assets/amostra-mundau/amostra-mundau3.webp'
+import amostraMundauFoto4 from '@/assets/amostra-mundau/amostra-mundau4.webp'
+import amostraMundauFoto5 from '@/assets/amostra-mundau/amostra-mundau5.webp'
+
+import studioTearCapa from '@/assets/studio-tear/studio-tear2.webp'
+import studioTearFoto1 from '@/assets/studio-tear/studio-tear1.webp'
+import studioTearFoto2 from '@/assets/studio-tear/studio-tear-formativo1.webp'
+import studioTearFoto3 from '@/assets/studio-tear/studio-tear3.webp'
+import studioTearFoto4 from '@/assets/studio-tear/studio-tear4.webp'
+import studioTearFoto5 from '@/assets/studio-tear/studio-tear5.webp'
+import studioTearFoto6 from '@/assets/studio-tear/studio-tear-formativo.webp'
+
+import tearNaAreaCapa from '@/assets/tear-na-area/tear-na-area-capa.webp'
+import tearNaAreaFoto1 from '@/assets/tear-na-area/tear-na-area1.webp'
+import tearNaAreaFoto2 from '@/assets/tear-na-area/tear-na-area2.webp'
+import tearNaAreaFoto3 from '@/assets/tear-na-area/tear-na-area3.webp'
+import tearNaAreaFoto4 from '@/assets/tear-na-area/tear-na-area4.webp'
+
+
+import sterComLivro from '@/assets/ster/sterComLivro.webp'
+import sterStudioTear from '@/assets/ster/sterStudioTear.webp'
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -80,10 +81,10 @@ type Projeto = {
   descricao: string | string[]
   detalhes: string | string[]
   circulacao?: string | string[]
-  img: string
-  imgFull: string
+  img: StaticImageData
+  imgFull: StaticImageData
   cor?: string
-  fotos?: string[]
+  fotos?: StaticImageData[]
 }
 
 const categoriaCor: Record<string, string> = {
@@ -124,10 +125,10 @@ const projetos: Projeto[] = [
       'Turnê no Rio',
       'Dezenas de escolas públicas',
     ],
-    img: luandaRuanda.src,
-    imgFull: luandaRuanda.src,
+    img: luandaRuanda,
+    imgFull: luandaRuanda,
     cor: 'text-gold',
-    fotos: [luandaFoto1.src, luandaFoto2.src, luandaFoto3.src, luandaFoto4.src, luandaFoto5.src],
+    fotos: [luandaFoto1, luandaFoto2, luandaFoto3, luandaFoto4, luandaFoto5],
   },
   {
     id: 'Ayo',
@@ -154,10 +155,10 @@ const projetos: Projeto[] = [
       'Escolas públicas',
       'Teatros',
     ],
-    img: ayoCapa.src,
-    imgFull: ayoCapa.src,
+    img: ayoCapa,
+    imgFull: ayoCapa,
     cor: 'text-azure',
-    fotos: [ayoFoto1.src, ayoFoto2.src, ayoCapa.src],
+    fotos: [ayoFoto1, ayoFoto2, ayoCapa],
   },
   {
     id: 'historias-da-caixola',
@@ -180,10 +181,10 @@ const projetos: Projeto[] = [
       'Festival de Culturas Negras BH',
       'Festival de Contação RJ',
     ],
-    img: historiasDaCaixolaFoto1.src,
-    imgFull: historiasDaCaixolaFoto1.src,
+    img: historiasDaCaixolaFoto1,
+    imgFull: historiasDaCaixolaFoto1,
     cor: 'text-crimson',
-    fotos: [historiasDaCaixolaFoto1.src, historiasDaCaixolaFoto2.src, historiasDaCaixolaFoto3.src, historiasDaCaixolaFoto4.src, historiasDaCaixolaFoto5.src, historiasDaCaixolaCapa.src],
+    fotos: [historiasDaCaixolaFoto1, historiasDaCaixolaFoto2, historiasDaCaixolaFoto3, historiasDaCaixolaFoto4, historiasDaCaixolaFoto5, historiasDaCaixolaCapa],
   },
   {
     id: 'livro-em-cena',
@@ -205,9 +206,9 @@ const projetos: Projeto[] = [
       'SESC',
       'Festivais de Teatro para Bebês',
     ],
-    img: livroEmCenaCapa.src,
-    imgFull: livroEmCenaCapa.src,
-    fotos: [livroEmCenaFoto1.src, livroEmCenaFoto2.src, livroEmCenaFoto3.src, livroEmCenaCapa.src],
+    img: livroEmCenaCapa,
+    imgFull: livroEmCenaCapa,
+    fotos: [livroEmCenaFoto1, livroEmCenaFoto2, livroEmCenaFoto3, livroEmCenaCapa],
     cor: 'text-purple',
   },
   {
@@ -231,10 +232,10 @@ const projetos: Projeto[] = [
       'Projeto Escola de Tempo Integral SP',
       'FLIP 2023 e 2024',
     ],
-    img: severinaCatadoraCapa.src,
-    imgFull: severinaCatadoraCapa.src,
+    img: severinaCatadoraCapa,
+    imgFull: severinaCatadoraCapa,
     cor: 'text-purple',
-    fotos: [severinaCatadoraFoto1.src, severinaCatadoraFoto2.src, severinaCatadoraFoto3.src, severinaCatadoraFoto4.src, severinaCatadoraFoto5.src],
+    fotos: [severinaCatadoraFoto1, severinaCatadoraFoto2, severinaCatadoraFoto3, severinaCatadoraFoto4, severinaCatadoraFoto5],
   },
   {
     id: 'cineclubinho-maluguinho',
@@ -256,10 +257,10 @@ const projetos: Projeto[] = [
       'Projeto Escola de Tempo Integral SP',
       'FLIP 2023 e 2024',
     ],
-    img: cineclubinhoMalunguinhoCapa.src,
-    imgFull: cineclubinhoMalunguinhoCapa.src,
+    img: cineclubinhoMalunguinhoCapa,
+    imgFull: cineclubinhoMalunguinhoCapa,
     cor: 'text-gold',
-    fotos: [cineclubinhoMalunguinhoFoto1.src, cineclubinhoMalunguinhoFoto2.src, cineclubinhoMalunguinhoFoto3.src],
+    fotos: [cineclubinhoMalunguinhoFoto1, cineclubinhoMalunguinhoFoto2, cineclubinhoMalunguinhoFoto3],
   },
   {
     id: 'mostra-mundau',
@@ -285,10 +286,10 @@ const projetos: Projeto[] = [
       'Projeto Escola de Tempo Integral SP',
       'FLIP 2023 e 2024',
     ],
-    img: amostraMundauCapa.src,
-    imgFull: amostraMundauCapa.src,
+    img: amostraMundauCapa,
+    imgFull: amostraMundauCapa,
     cor: 'text-gold',
-    fotos: [amostraMundauFoto1.src, amostraMundauFoto2.src, amostraMundauFoto3.src, amostraMundauFoto4.src, amostraMundauFoto5.src],
+    fotos: [amostraMundauFoto1, amostraMundauFoto2, amostraMundauFoto3, amostraMundauFoto4, amostraMundauFoto5],
   },
   {
     id: 'studio-tear',
@@ -310,10 +311,10 @@ const projetos: Projeto[] = [
       'Projeto Escola de Tempo Integral SP',
       'FLIP 2023 e 2024',
     ],
-    img: studioTearCapa.src,
-    imgFull: studioTearCapa.src,
+    img: studioTearCapa,
+    imgFull: studioTearCapa,
     cor: 'text-gold',
-    fotos: [studioTearFoto1.src, studioTearFoto2.src, studioTearFoto3.src, studioTearFoto4.src, studioTearFoto5.src, studioTearFoto6.src],
+    fotos: [studioTearFoto1, studioTearFoto2, studioTearFoto3, studioTearFoto4, studioTearFoto5, studioTearFoto6],
   },
   {
     id: 'tear-na-area',
@@ -336,16 +337,16 @@ const projetos: Projeto[] = [
       'Projeto Escola de Tempo Integral SP',
       'FLIP 2023 e 2024',
     ],
-    img: tearNaAreaCapa.src,
-    imgFull: tearNaAreaCapa.src,
+    img: tearNaAreaCapa,
+    imgFull: tearNaAreaCapa,
     cor: 'text-gold',
-    fotos: [tearNaAreaFoto1.src, tearNaAreaFoto2.src, tearNaAreaFoto3.src, tearNaAreaFoto4.src],
+    fotos: [tearNaAreaFoto1, tearNaAreaFoto2, tearNaAreaFoto3, tearNaAreaFoto4],
   },
 ]
 
 export default function ProjetosPage() {
   const [selected, setSelected] = useState<Projeto | null>(null)
-  const [fotoExpandida, setFotoExpandida] = useState<string | null>(null)
+  const [fotoExpandida, setFotoExpandida] = useState<StaticImageData | null>(null)
   const categorias = ['Todos', ...Array.from(new Set(projetos.map(p => p.categoria)))]
   const [catAtiva, setCatAtiva] = useState('Todos')
 
@@ -409,15 +410,15 @@ export default function ProjetosPage() {
                 whileHover="hover"
                 className="group relative overflow-hidden bg-brown text-left w-full cursor-pointer"
               >
-                <div className="h-80 overflow-hidden">
-                  <motion.img
+                <div className="relative h-80 overflow-hidden">
+                  <Image
                     src={projeto.img}
                     alt={projeto.titulo}
-                    className="w-full h-full object-cover object-top"
-                    variants={{ hover: { scale: 1.06 } }}
-                    transition={{ duration: 0.6 }}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-brown via-brown/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-brown via-brown/20 to-transparent pointer-events-none" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="flex items-center justify-between mb-3">
@@ -462,8 +463,15 @@ export default function ProjetosPage() {
               transition={{ duration: 0.4, ease: 'easeOut' as const }}
               className="fixed inset-x-4 top-[10vh] bottom-[5vh] z-50 max-w-4xl mx-auto bg-gold border border-gold/30 overflow-y-auto scrollbar-yellow"
             >
-              <div className="relative h-full overflow-hidden">
-                <img src={selected.imgFull} alt={selected.titulo} className="w-full h-full object-cover object-top" />
+              <div className="relative h-96 sm:h-[420px] overflow-hidden">
+                <Image
+                  src={selected.imgFull}
+                  alt={selected.titulo}
+                  fill
+                  priority
+                  sizes="(max-width: 896px) 100vw, 896px"
+                  className="object-cover object-top"
+                />
                 <button
                   onClick={() => {
                     setSelected(null)
@@ -540,10 +548,12 @@ export default function ProjetosPage() {
                           onClick={() => setFotoExpandida(foto)}
                           className="group relative h-40 overflow-hidden bg-ink/50 border border-gold/15 hover:border-gold/50 transition-colors cursor-pointer flex items-center justify-center p-2"
                         >
-                          <img
+                          <Image
                             src={foto}
                             alt={`${selected.titulo} foto ${idx + 1}`}
-                            className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-500"
+                            fill
+                            sizes="(max-width: 640px) 50vw, 33vw"
+                            className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                           />
                           <div className="absolute inset-0 bg-linear-to-t from-brown/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 pointer-events-none">
                             <span className="font-sans text-[10px] uppercase tracking-wider text-gold">Ampliar +</span>
@@ -586,15 +596,19 @@ export default function ProjetosPage() {
               transition={{ duration: 0.3 }}
               className="fixed inset-4 sm:inset-12 z-60 flex items-center justify-center pointer-events-none"
             >
-              <div className="relative max-w-5xl max-h-full p-2 pointer-events-auto flex flex-col items-center">
-                <img
-                  src={fotoExpandida}
-                  alt="Foto do projeto ampliada"
-                  className="max-h-[80vh] w-auto max-w-full object-contain border border-gold/30 shadow-2xl"
-                />
+              <div className="relative max-w-5xl w-full h-[80vh] p-2 pointer-events-auto flex flex-col items-center">
+                <div className="relative w-full flex-1">
+                  <Image
+                    src={fotoExpandida}
+                    alt="Foto do projeto ampliada"
+                    fill
+                    sizes="90vw"
+                    className="object-contain border border-gold/30 shadow-2xl"
+                  />
+                </div>
                 <button
                   onClick={() => setFotoExpandida(null)}
-                  className="mt-4 bg-gold text-crimson font-sans text-xs uppercase tracking-widest px-6 py-2 hover:bg-white transition-colors cursor-pointer"
+                  className="mt-4 bg-gold text-crimson font-sans text-xs uppercase tracking-widest px-6 py-2 hover:bg-white transition-colors cursor-pointer shrink-0"
                 >
                   Fechar ✕
                 </button>

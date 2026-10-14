@@ -47,17 +47,16 @@ export default function Navigation() {
         transition={{ duration: 0.6, ease: 'easeOut' as const }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || mobileOpen
           ? 'bg-crimson backdrop-blur-md border-b border-gold/15'
-          : 'bg-linear-to-b from-ink/80 to-transparent'
+          : 'bg-linear-to-b from-ink/70 to-transparent '
           }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link
             href="/"
-            className={`flex flex-col leading-none group transition-all duration-300 ${
-              isHome && !scrolled && !mobileOpen
-                ? 'opacity-0 -translate-y-2 pointer-events-none lg:opacity-100 lg:translate-y-0 lg:pointer-events-auto'
-                : 'opacity-100 translate-y-0 pointer-events-auto'
-            }`}
+            className={`flex flex-col leading-none group transition-all duration-300 ${isHome && !scrolled && !mobileOpen
+              ? 'opacity-0 -translate-y-2 pointer-events-none lg:opacity-100 lg:translate-y-0 lg:pointer-events-auto'
+              : 'opacity-100 translate-y-0 pointer-events-auto'
+              }`}
             onClick={() => setMobileOpen(false)}
           >
             <span className="font-display text-yellow text-xl tracking-wide group-hover:text-white transition-colors duration-300">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from 'react'
+import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 const reveal = {
@@ -8,7 +9,7 @@ const reveal = {
   show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: 'easeOut' as const } },
 }
 
-import sterSaudandoNobg from '@/assets/sterSaudando-nobg.png'
+import sterSaudandoNobg from '@/assets/sterSaudando-nobg.webp'
 
 type TipoEvento = 'espetaculo' | 'premio' | 'formacao' | 'institucional' | 'internacional'
 
@@ -145,10 +146,11 @@ export default function TrajetoriaPage() {
             viewport={{ once: true }}
             className="shrink-0 flex items-end justify-center lg:self-stretch"
           >
-            <img
-              src={sterSaudandoNobg.src}
+            <Image
+              src={sterSaudandoNobg}
               alt="Stephany em pose de dança"
-              className="w-80 md:w-100 xl:w-132 object-contain drop-shadow-xl"
+              priority
+              className="w-80 md:w-100 xl:w-132 h-auto object-contain drop-shadow-xl"
             />
           </motion.div>
         </div>

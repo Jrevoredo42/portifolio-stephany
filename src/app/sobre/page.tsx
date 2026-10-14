@@ -1,14 +1,14 @@
 "use client";
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-import stephanyNarrando from '@/assets/stephany-narrando.png'
-import coletivoTear from '@/assets/coletivo-tear.png'
-import sterApresentando from '@/assets/ster/sterApresentando.jpeg'
-import sterApresentando2 from '@/assets/ster/sterApresentando2.jpeg'
-import sterComLivro from '@/assets/ster/sterComLivro.jpeg'
-import sterAtuacao from '@/assets/ster/ster-atuacao.jpeg'
+import stephanyNarrando from '@/assets/stephany-narrando.webp'
+import coletivoTear from '@/assets/coletivo-tear.webp'
+import sterApresentando from '@/assets/ster/sterApresentando.webp'
+import sterApresentando2 from '@/assets/ster/sterApresentando2.webp'
+import sterAtuacao from '@/assets/ster/ster-atuacao.webp'
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -35,7 +35,14 @@ export default function SobrePage() {
       {/* ── CABEÇALHO ────────────────────────────────────── */}
       <section className="relative pt-40 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={stephanyNarrando.src} alt="" className="w-full h-full object-cover object-center" />
+          <Image
+            src={stephanyNarrando}
+            alt="Stephany narrando histórias"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
           <div className="absolute inset-0 bg-linear-to-l from-crimson/80 to-transparent" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8">
@@ -69,22 +76,36 @@ export default function SobrePage() {
           className="lg:sticky lg:top-32 space-y-6"
         >
           <div className="relative overflow-hidden aspect-3/4">
-            <img
-              src={sterApresentando.src}
+            <Image
+              src={sterApresentando}
               alt="Stephany Metódio com máscara africana"
-              className="w-full h-full object-cover object-top"
+              fill
+              sizes="(max-width: 1024px) 100vw, 33vw"
+              className="object-cover object-top"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-brown/60 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
+            <div className="absolute inset-0 bg-linear-to-t from-brown/60 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 pointer-events-none">
               <p className="font-sans text-[10px] uppercase tracking-widest text-gold/70">Personagem — Luanda Ruanda</p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-3">
-            <div className="h-32 overflow-hidden">
-              <img src={coletivoTear.src} alt="" className="w-full h-full object-cover" />
+            <div className="relative h-32 overflow-hidden">
+              <Image
+                src={coletivoTear}
+                alt="Coletivo Tear"
+                fill
+                sizes="(max-width: 1024px) 50vw, 16vw"
+                className="object-cover"
+              />
             </div>
-            <div className="h-32 overflow-hidden">
-              <img src={sterApresentando2.src} alt="" className="w-full h-full object-cover" />
+            <div className="relative h-32 overflow-hidden">
+              <Image
+                src={sterApresentando2}
+                alt="Stephany apresentando"
+                fill
+                sizes="(max-width: 1024px) 50vw, 16vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </motion.div>
@@ -165,9 +186,10 @@ export default function SobrePage() {
             >
               <div className="relative w-full flex justify-center">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border-2 border-gold/25 bg-purple/10 group">
-                  <img
-                    src={sterAtuacao.src}
+                  <Image
+                    src={sterAtuacao}
                     alt="Stephany Metódio em atividade de formação e atuação profissional"
+                    sizes="(max-width: 1024px) 100vw, 55vw"
                     className="w-full h-auto max-h-180 xl:max-h-200 object-contain block mx-auto transition-transform duration-500 group-hover:scale-[1.01]"
                   />
                 </div>
