@@ -19,7 +19,7 @@ export default function Loading() {
             </div>
           </div>
           <div className="md:col-span-5 flex justify-center">
-            <Skeleton className="w-64 h-80 md:w-80 md:h-[450px] rounded-3xl bg-brown/15" />
+            <Skeleton className="w-64 h-80 md:w-80 md:h-112.5 rounded-3xl bg-brown/15" />
           </div>
         </div>
       </section>

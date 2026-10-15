@@ -415,7 +415,7 @@ export default function HomePage() {
             className="space-y-6"
           >
             {[
-              { label: 'E-mail', value: 'stephany.metodio@email.com', href: 'mailto:stephany.metodio@email.com', icon: '✉' },
+              { label: 'E-mail', value: 'stephany.metodio@email.com', href: 'mailto:stephany.metodio@gmail.com', icon: '✉' },
               { label: 'WhatsApp', value: '+55 87 9 8148-0808', href: 'https://wa.me/5587981480808', icon: '◎' },
               { label: 'Instagram', value: '@stephanymetodio', href: 'https://www.instagram.com/stephany_metodio/', icon: '◇' },
               { label: 'YouTube', value: 'Stephany Metódio', href: 'https://www.youtube.com/@aldeiatear1834', icon: '▷' },

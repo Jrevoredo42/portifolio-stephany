@@ -11,7 +11,7 @@ export default function Loading() {
           {[1, 2, 3, 4, 5].map((i) => (
             <div key={i} className="relative space-y-3">
               {/* Marcador */}
-              <div className="absolute -left-[31px] md:-left-[47px] top-1">
+              <div className="absolute -left-7.75 md:-left-11.75 top-1">
                 <Skeleton className="w-4 h-4 rounded-full bg-gold/40" />
               </div>
 
